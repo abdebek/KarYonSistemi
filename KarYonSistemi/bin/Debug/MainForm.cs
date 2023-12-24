@@ -192,12 +192,8 @@ namespace KarYonSistemi
 
         private void ResetShipmentForm()
         {
-            textBox1.Text = "";
-            textBox2.Text = "";
             comboBoxProductId.SelectedIndex = -1;
             comboBoxProductId.Text = "Ürün seçiniz";
-            comboBoxCargoId.SelectedIndex = -1;
-            comboBoxCargoId.Text = "Kargo seçiniz";
         }
 
         private DeliveryService GetDeliveryService(int cargoId)

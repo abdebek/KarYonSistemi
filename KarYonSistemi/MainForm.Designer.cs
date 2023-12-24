@@ -75,6 +75,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.textBoxProductName = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -187,6 +188,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.label19);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.btnCheckDeliveryStatus);
             this.panel1.Controls.Add(this.textBoxProductId);
@@ -213,9 +215,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(452, 62);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(166, 25);
+            this.label5.Size = new System.Drawing.Size(64, 25);
             this.label5.TabIndex = 7;
-            this.label5.Text = "Reciver Name:";
+            this.label5.Text = "Alıcı:";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label4
@@ -223,9 +225,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(452, 14);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(161, 25);
+            this.label4.Size = new System.Drawing.Size(122, 25);
             this.label4.TabIndex = 6;
-            this.label4.Text = "Sender Name:";
+            this.label4.Text = "Gönderen:";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
@@ -233,9 +235,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(7, 62);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(179, 25);
+            this.label3.Size = new System.Drawing.Size(190, 25);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Delivery Status:";
+            this.label3.Text = "Gönderi Durumu:";
             this.label3.Click += new System.EventHandler(this.label3_Click_1);
             // 
             // label2
@@ -243,28 +245,28 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(7, 14);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(167, 25);
+            this.label2.Size = new System.Drawing.Size(110, 25);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Product Name:";
+            this.label2.Text = "Ürün Adı:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // btnCheckDeliveryStatus
             // 
             this.btnCheckDeliveryStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnCheckDeliveryStatus.Location = new System.Drawing.Point(401, 41);
+            this.btnCheckDeliveryStatus.Location = new System.Drawing.Point(486, 41);
             this.btnCheckDeliveryStatus.Name = "btnCheckDeliveryStatus";
             this.btnCheckDeliveryStatus.Size = new System.Drawing.Size(255, 36);
             this.btnCheckDeliveryStatus.TabIndex = 2;
-            this.btnCheckDeliveryStatus.Text = "Check Delivery Status";
+            this.btnCheckDeliveryStatus.Text = "Güncel Durum Göster";
             this.btnCheckDeliveryStatus.UseVisualStyleBackColor = false;
             this.btnCheckDeliveryStatus.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBoxProductId
             // 
             this.textBoxProductId.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxProductId.Location = new System.Drawing.Point(6, 41);
+            this.textBoxProductId.Location = new System.Drawing.Point(252, 41);
             this.textBoxProductId.Name = "textBoxProductId";
-            this.textBoxProductId.Size = new System.Drawing.Size(300, 36);
+            this.textBoxProductId.Size = new System.Drawing.Size(205, 36);
             this.textBoxProductId.TabIndex = 1;
             this.textBoxProductId.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -274,9 +276,9 @@
             this.label1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label1.Location = new System.Drawing.Point(6, 4);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(234, 25);
+            this.label1.Size = new System.Drawing.Size(241, 25);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Shipment Information";
+            this.label1.Text = "Gönderi Durum Bilgisi";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // flowLayoutPanel4
@@ -313,9 +315,9 @@
             this.label7.BackColor = System.Drawing.SystemColors.Info;
             this.label7.Location = new System.Drawing.Point(6, 12);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(191, 25);
+            this.label7.Size = new System.Drawing.Size(174, 25);
             this.label7.TabIndex = 5;
-            this.label7.Text = "Shipment History";
+            this.label7.Text = "Tüm Gönderiler";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // flowLayoutPanel3
@@ -399,9 +401,9 @@
             this.label18.AutoSize = true;
             this.label18.Location = new System.Drawing.Point(17, 98);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(179, 25);
+            this.label18.Size = new System.Drawing.Size(105, 25);
             this.label18.TabIndex = 8;
-            this.label18.Text = "Receiver Name:";
+            this.label18.Text = "Alıcı Adı:";
             // 
             // textBox1
             // 
@@ -419,7 +421,7 @@
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(161, 25);
             this.label17.TabIndex = 10;
-            this.label17.Text = "Sender Name:";
+            this.label17.Text = "Gönderici Adı:";
             // 
             // btnStartShipping
             // 
@@ -428,7 +430,7 @@
             this.btnStartShipping.Name = "btnStartShipping";
             this.btnStartShipping.Size = new System.Drawing.Size(199, 52);
             this.btnStartShipping.TabIndex = 4;
-            this.btnStartShipping.Text = "Start Shipping";
+            this.btnStartShipping.Text = "Gönder";
             this.btnStartShipping.UseVisualStyleBackColor = false;
             this.btnStartShipping.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -439,7 +441,7 @@
             this.comboBoxCargoId.Name = "comboBoxCargoId";
             this.comboBoxCargoId.Size = new System.Drawing.Size(284, 33);
             this.comboBoxCargoId.TabIndex = 3;
-            this.comboBoxCargoId.Text = "Select a Cargo Company";
+            this.comboBoxCargoId.Text = "Kargo Şirketi Seçin";
             this.comboBoxCargoId.SelectedIndexChanged += new System.EventHandler(this.comboBoxCargoId_SelectedIndexChanged);
             // 
             // comboBoxProductId
@@ -449,7 +451,7 @@
             this.comboBoxProductId.Name = "comboBoxProductId";
             this.comboBoxProductId.Size = new System.Drawing.Size(284, 33);
             this.comboBoxProductId.TabIndex = 2;
-            this.comboBoxProductId.Text = "Select a Product";
+            this.comboBoxProductId.Text = "Gönderilecek Ürün Seçin";
             this.comboBoxProductId.SelectedIndexChanged += new System.EventHandler(this.comboBoxProductId_SelectedIndexChanged);
             // 
             // label6
@@ -458,9 +460,9 @@
             this.label6.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label6.Location = new System.Drawing.Point(13, 10);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(167, 25);
+            this.label6.Size = new System.Drawing.Size(201, 25);
             this.label6.TabIndex = 1;
-            this.label6.Text = "Ship a Product";
+            this.label6.Text = "Bir Ürün Gönderin";
             // 
             // panel6
             // 
@@ -498,9 +500,9 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(16, 15);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(209, 25);
+            this.label11.Size = new System.Drawing.Size(483, 25);
             this.label11.TabIndex = 2;
-            this.label11.Text = "Available Products";
+            this.label11.Text = "Gönderilmek Üzere Beklemede Olan Ürünler:";
             this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // flowLayoutPanel5
@@ -532,7 +534,7 @@
             this.btnAddToCatalog.Name = "btnAddToCatalog";
             this.btnAddToCatalog.Size = new System.Drawing.Size(199, 41);
             this.btnAddToCatalog.TabIndex = 5;
-            this.btnAddToCatalog.Text = "Add To Catalog";
+            this.btnAddToCatalog.Text = "Kaydet";
             this.btnAddToCatalog.UseVisualStyleBackColor = false;
             this.btnAddToCatalog.Click += new System.EventHandler(this.btnAddToCatalog_Click);
             // 
@@ -541,9 +543,9 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(431, 41);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(73, 25);
+            this.label10.Size = new System.Drawing.Size(77, 25);
             this.label10.TabIndex = 9;
-            this.label10.Text = "Price:";
+            this.label10.Text = "Fıyatı:";
             // 
             // textBoxProductPrice
             // 
@@ -559,9 +561,9 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(13, 41);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(167, 25);
+            this.label9.Size = new System.Drawing.Size(110, 25);
             this.label9.TabIndex = 7;
-            this.label9.Text = "Product Name:";
+            this.label9.Text = "Ürün Adı:";
             // 
             // textBoxProductName
             // 
@@ -577,9 +579,19 @@
             this.label8.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label8.Location = new System.Drawing.Point(13, 4);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(235, 25);
+            this.label8.Size = new System.Drawing.Size(201, 25);
             this.label8.TabIndex = 1;
-            this.label8.Text = "Product Management";
+            this.label8.Text = "Yeni Ürün Ekleyin";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(10, 48);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(224, 25);
+            this.label19.TabIndex = 8;
+            this.label19.Text = "Ürün Seri Numarası:";
+            this.label19.Click += new System.EventHandler(this.label19_Click);
             // 
             // MainForm
             // 
@@ -674,6 +686,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label19;
     }
 }
 
