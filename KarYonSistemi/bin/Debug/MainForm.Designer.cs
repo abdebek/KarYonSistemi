@@ -295,6 +295,7 @@
             // 
             // dataGridViewShippingHistory
             // 
+            this.dataGridViewShippingHistory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewShippingHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewShippingHistory.Location = new System.Drawing.Point(0, 40);
             this.dataGridViewShippingHistory.Name = "dataGridViewShippingHistory";
@@ -477,7 +478,7 @@
             // 
             // dataGridViewProducts
             // 
-            this.dataGridViewProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
+            this.dataGridViewProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewProducts.Location = new System.Drawing.Point(3, 43);
             this.dataGridViewProducts.Name = "dataGridViewProducts";
@@ -515,6 +516,7 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1001, 78);
             this.panel5.TabIndex = 0;
+            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // btnAddToCatalog
             // 
@@ -527,10 +529,10 @@
             // 
             // label10
             // 
-            this.label10.AutoSize = false;
+            this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(431, 41);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(167, 25);
+            this.label10.Size = new System.Drawing.Size(73, 25);
             this.label10.TabIndex = 9;
             this.label10.Text = "Price:";
             // 
@@ -539,13 +541,13 @@
             this.textBoxProductPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxProductPrice.Location = new System.Drawing.Point(512, 34);
             this.textBoxProductPrice.Name = "textBoxProductPrice";
-            this.textBoxProductPrice.Size = new System.Drawing.Size(167, 36);
+            this.textBoxProductPrice.Size = new System.Drawing.Size(208, 36);
             this.textBoxProductPrice.TabIndex = 8;
             this.textBoxProductPrice.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label9
             // 
-            this.label9.AutoSize = false;
+            this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(13, 41);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(167, 25);
@@ -557,7 +559,7 @@
             this.textBoxProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxProductName.Location = new System.Drawing.Point(186, 34);
             this.textBoxProductName.Name = "textBoxProductName";
-            this.textBoxProductName.Size = new System.Drawing.Size(225, 36);
+            this.textBoxProductName.Size = new System.Drawing.Size(212, 36);
             this.textBoxProductName.TabIndex = 2;
             // 
             // label8

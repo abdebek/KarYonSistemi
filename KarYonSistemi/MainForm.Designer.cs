@@ -295,6 +295,7 @@
             // 
             // dataGridViewShippingHistory
             // 
+            this.dataGridViewShippingHistory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewShippingHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewShippingHistory.Location = new System.Drawing.Point(0, 40);
             this.dataGridViewShippingHistory.Name = "dataGridViewShippingHistory";
@@ -477,7 +478,7 @@
             // 
             // dataGridViewProducts
             // 
-            this.dataGridViewProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
+            this.dataGridViewProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewProducts.Location = new System.Drawing.Point(3, 43);
             this.dataGridViewProducts.Name = "dataGridViewProducts";
