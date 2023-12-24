@@ -6,8 +6,7 @@ namespace KarYonSistemi
     public class ShipmentInfo : Entity
     {
         private int _cargoId;
-        public int ProductId
-        { get; set; }
+        public int ProductId { get; set; }
         public string SenderName { get; set; }
         public string ReceiverName { get; set; }
 
