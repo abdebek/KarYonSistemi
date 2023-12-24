@@ -386,7 +386,7 @@
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(183, 91);
+            this.textBox2.Location = new System.Drawing.Point(189, 91);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(218, 36);
             this.textBox2.TabIndex = 11;
@@ -404,7 +404,7 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(183, 43);
+            this.textBox1.Location = new System.Drawing.Point(189, 43);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(218, 36);
             this.textBox1.TabIndex = 10;
@@ -432,7 +432,7 @@
             // comboBoxCargoId
             // 
             this.comboBoxCargoId.FormattingEnabled = true;
-            this.comboBoxCargoId.Location = new System.Drawing.Point(439, 50);
+            this.comboBoxCargoId.Location = new System.Drawing.Point(439, 43);
             this.comboBoxCargoId.Name = "comboBoxCargoId";
             this.comboBoxCargoId.Size = new System.Drawing.Size(284, 33);
             this.comboBoxCargoId.TabIndex = 3;
@@ -442,7 +442,7 @@
             // comboBoxProductId
             // 
             this.comboBoxProductId.FormattingEnabled = true;
-            this.comboBoxProductId.Location = new System.Drawing.Point(439, 101);
+            this.comboBoxProductId.Location = new System.Drawing.Point(439, 95);
             this.comboBoxProductId.Name = "comboBoxProductId";
             this.comboBoxProductId.Size = new System.Drawing.Size(284, 33);
             this.comboBoxProductId.TabIndex = 2;
