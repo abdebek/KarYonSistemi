@@ -47,7 +47,7 @@
             // 
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(724, 627);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(411, 586);
             this.flowLayoutPanel2.TabIndex = 0;
             // 
             // MainForm
@@ -57,7 +57,7 @@
             this.ClientSize = new System.Drawing.Size(1120, 626);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "MainForm";
-            this.Text = "KarYönSistemi";
+            this.Text = "KarYönSistemi: Kargo Yönetim Sistemi";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
