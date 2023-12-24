@@ -44,5 +44,9 @@ namespace KarTeYoSis
             shipments.Add(new ShipmentInfo { Id = 2, ProductId = 2, SenderName = "Sender2", ReceiverName = "Receiver2" });
         }
 
+        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
