@@ -270,7 +270,6 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Enabled = false;
             this.label1.Location = new System.Drawing.Point(6, 4);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(234, 25);
@@ -398,7 +397,7 @@
             this.label18.AutoSize = true;
             this.label18.Location = new System.Drawing.Point(17, 98);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(166, 25);
+            this.label18.Size = new System.Drawing.Size(179, 25);
             this.label18.TabIndex = 8;
             this.label18.Text = "Receiver Name:";
             // 
