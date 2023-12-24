@@ -8,8 +8,13 @@
 *.log
 
 # Ignore build directories
-./KarTeYoSis/bin/
-./KarTeYoSis/obj/
+KarYonSistemi/bin/*
+KarYonSistemi/obj/*
+KarYonSistemi/bin/*
+KarYonSistemi/obj/*
+
+./bin/*
+./obj/*
 /build/
 
 # Ignore IDE-specific files
