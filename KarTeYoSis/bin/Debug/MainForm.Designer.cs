@@ -57,7 +57,7 @@
             this.ClientSize = new System.Drawing.Size(1120, 626);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "MainForm";
-            this.Text = "KarYönSistemi: Kargo Yönetim Sistemi";
+            this.Text = "KarYönSistemi";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);

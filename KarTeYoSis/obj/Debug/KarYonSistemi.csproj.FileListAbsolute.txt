@@ -1,0 +1,13 @@
+C:\Users\A\source\repos\KarTeYoSis\KarTeYoSis\bin\Debug\KarTeYoSis.exe.config
+C:\Users\A\source\repos\KarTeYoSis\KarTeYoSis\bin\Debug\KarTeYoSis.exe
+C:\Users\A\source\repos\KarTeYoSis\KarTeYoSis\bin\Debug\KarTeYoSis.pdb
+C:\Users\A\source\repos\KarTeYoSis\KarTeYoSis\obj\Debug\KarYonSistemi.csproj.AssemblyReference.cache
+C:\Users\A\source\repos\KarTeYoSis\KarTeYoSis\obj\Debug\KarTeYoSis.MainForm.resources
+C:\Users\A\source\repos\KarTeYoSis\KarTeYoSis\obj\Debug\KarTeYoSis.Properties.Resources.resources
+C:\Users\A\source\repos\KarTeYoSis\KarTeYoSis\obj\Debug\KarYonSistemi.csproj.GenerateResource.cache
+C:\Users\A\source\repos\KarTeYoSis\KarTeYoSis\obj\Debug\KarYonSistemi.csproj.CoreCompileInputs.cache
+C:\Users\A\source\repos\KarTeYoSis\KarTeYoSis\obj\Debug\KarTeYoSis.exe
+C:\Users\A\source\repos\KarTeYoSis\KarTeYoSis\obj\Debug\KarTeYoSis.pdb
+C:\Users\A\source\repos\KarTeYoSis\KarTeYoSis\bin\Debug\MainForm.resx
+C:\Users\A\source\repos\KarTeYoSis\KarTeYoSis\bin\Debug\MainForm.cs
+C:\Users\A\source\repos\KarTeYoSis\KarTeYoSis\bin\Debug\MainForm.Designer.cs

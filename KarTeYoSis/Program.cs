@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
+
 namespace KarTeYoSis
 {
     internal static class Program
