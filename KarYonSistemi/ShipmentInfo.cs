@@ -6,6 +6,7 @@
         public int ProductId { get; set; }
         public string SenderName { get; set; }
         public string ReceiverName { get; set; }
+        public bool isDelivered { get; set; }
     }
 
 }

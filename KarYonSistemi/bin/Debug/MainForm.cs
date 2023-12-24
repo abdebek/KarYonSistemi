@@ -115,9 +115,32 @@ namespace KarTeYoSis
 
         }
 
+        private void resetDeliveryStatusBoard()
+        {
+            label2.Text = label2.Text.Split(':')[0];
+            label3.Text = label3.Text.Split(':')[0];
+            label4.Text = label4.Text.Split(':')[0];
+            label5.Text = label5.Text.Split(':')[0];
+
+        }
         private void button1_Click(object sender, EventArgs e)
         {
+            // Reset any previous changes if available
+            resetDeliveryStatusBoard();
 
+            var productId = Int32.Parse(textBoxProductId.Text);
+            var shipment = shipments.Find(p => p.ProductId == productId);
+            if (shipment == null)
+            {
+                return;
+            }
+
+            var productName = products.Find(p => p.Id == shipment.ProductId)?.Name ?? "";
+            var deliveryStatus = shipment.isDelivered ? "Teslim Edilmiştir." : "Kargoda";
+            label2.Text = string.Join(": ", label2.Text, productName);
+            label3.Text = string.Join(": ", label3.Text, deliveryStatus);
+            label4.Text = string.Join(": ", label4.Text, shipment.SenderName);
+            label5.Text = string.Join(": ", label5.Text, shipment.ReceiverName);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -216,6 +239,21 @@ namespace KarTeYoSis
         }
 
         private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
         {
 
         }

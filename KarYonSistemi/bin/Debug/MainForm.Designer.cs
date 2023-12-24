@@ -216,6 +216,7 @@
             this.label5.Size = new System.Drawing.Size(166, 25);
             this.label5.TabIndex = 7;
             this.label5.Text = "Reciver Name:";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label4
             // 
@@ -225,6 +226,7 @@
             this.label4.Size = new System.Drawing.Size(161, 25);
             this.label4.TabIndex = 6;
             this.label4.Text = "Sender Name:";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -244,6 +246,7 @@
             this.label2.Size = new System.Drawing.Size(167, 25);
             this.label2.TabIndex = 4;
             this.label2.Text = "Product Name:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // btnCheckDeliveryStatus
             // 
