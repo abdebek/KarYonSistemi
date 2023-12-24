@@ -1,4 +1,4 @@
-﻿namespace KarTeYoSis
+﻿namespace KarYonSistemi
 {
     // Abstract class Entity implementing IEntity
     public abstract class Entity : IEntity

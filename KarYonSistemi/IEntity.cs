@@ -1,4 +1,4 @@
-﻿namespace KarTeYoSis
+﻿namespace KarYonSistemi
 {
     // IEntity interface
     public interface IEntity

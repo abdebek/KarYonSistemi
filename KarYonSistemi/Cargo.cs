@@ -1,4 +1,4 @@
-﻿namespace KarTeYoSis
+﻿namespace KarYonSistemi
 {
     // Cargo class inheriting from Entity
     public class Cargo : Entity
@@ -7,5 +7,4 @@
         public string PhoneNumber { get; set; }
         public string Address { get; set; }
     }
-
 }

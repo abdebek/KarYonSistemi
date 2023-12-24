@@ -1,4 +1,4 @@
-﻿namespace KarTeYoSis
+﻿namespace KarYonSistemi
 {
     partial class MainForm
     {
@@ -141,7 +141,7 @@
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(420, 25);
             this.label16.TabIndex = 2;
-            this.label16.Text = "KarYonSistemi: Kargo Yönetim Sistemi";
+            this.label16.Text = "KarYönSistemi: Kargo Yönetim Sistemi";
             this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // pictureBox1
@@ -347,7 +347,7 @@
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(865, 25);
             this.label15.TabIndex = 9;
-            this.label15.Text = "KarYonSistemi uygulamasını indirip kendi bilgisayarınızda kurulumunu yapmaktır.";
+            this.label15.Text = "KarYönSistemi uygulamasını indirip kendi bilgisayarınızda kurulumunu yapmaktır.";
             // 
             // label14
             // 
@@ -391,6 +391,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(218, 36);
             this.textBox2.TabIndex = 11;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label18
             // 
@@ -399,7 +400,7 @@
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(166, 25);
             this.label18.TabIndex = 8;
-            this.label18.Text = "Reciver Name:";
+            this.label18.Text = "Receiver Name:";
             // 
             // textBox1
             // 
@@ -446,7 +447,7 @@
             this.comboBoxProductId.Name = "comboBoxProductId";
             this.comboBoxProductId.Size = new System.Drawing.Size(284, 33);
             this.comboBoxProductId.TabIndex = 2;
-            this.comboBoxProductId.Text = "Select a Cargo Product";
+            this.comboBoxProductId.Text = "Select a Product";
             this.comboBoxProductId.SelectedIndexChanged += new System.EventHandler(this.comboBoxProductId_SelectedIndexChanged);
             // 
             // label6
@@ -529,6 +530,7 @@
             this.btnAddToCatalog.TabIndex = 5;
             this.btnAddToCatalog.Text = "Add To Catalog";
             this.btnAddToCatalog.UseVisualStyleBackColor = true;
+            this.btnAddToCatalog.Click += new System.EventHandler(this.btnAddToCatalog_Click);
             // 
             // label10
             // 

@@ -34,7 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>KarTeYoSis.Program</StartupObject>
+    <StartupObject>KarYonSistemi.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <Win32Resource>

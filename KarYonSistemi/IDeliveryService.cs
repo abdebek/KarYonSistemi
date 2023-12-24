@@ -1,8 +1,9 @@
-﻿namespace KarTeYoSis
+﻿using System.Threading.Tasks;
+
+namespace KarYonSistemi
 {
     public interface IDeliveryService
     {
-        bool CheckDeliveryStatus(int shipmentInfoId);
-        void SendCargo(ShipmentInfo shipmentInfo);
+        Task SendCargo(ShipmentInfo shipmentInfo);
     }
 }
