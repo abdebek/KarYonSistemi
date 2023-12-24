@@ -250,8 +250,8 @@
             // 
             // btnCheckDeliveryStatus
             // 
-            this.btnCheckDeliveryStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnCheckDeliveryStatus.Location = new System.Drawing.Point(450, 42);
+            this.btnCheckDeliveryStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnCheckDeliveryStatus.Location = new System.Drawing.Point(401, 41);
             this.btnCheckDeliveryStatus.Name = "btnCheckDeliveryStatus";
             this.btnCheckDeliveryStatus.Size = new System.Drawing.Size(255, 36);
             this.btnCheckDeliveryStatus.TabIndex = 2;

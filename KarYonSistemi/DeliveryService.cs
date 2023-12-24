@@ -5,6 +5,9 @@ namespace KarYonSistemi
     // Abstract class DeliveryService implementing IDeliveryService
     public abstract class DeliveryService : IDeliveryService
     {
-        public abstract Task SendCargo(ShipmentInfo shipmentInfo);
+        public virtual async Task SendCargo(ShipmentInfo shipmentInfo)
+        {
+            // To be implemented by the derived classes
+        }
     }
 }

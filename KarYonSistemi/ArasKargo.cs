@@ -24,7 +24,7 @@ namespace KarYonSistemi
             Console.WriteLine($"Aras Kargo: Product {shipmentInfo.ProductId} is being delivered. Estimated time: 45 seconds.");
 
             // Simulate delivery time asynchronously
-            await Task.Delay(45000);
+            await Task.Delay(15000);
 
             shipmentInfo.SetDeliveryStatus(true); // Update the delivery status
             Console.WriteLine($"Product {shipmentInfo.ProductId} delivered by Aras Kargo.");
