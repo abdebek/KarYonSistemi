@@ -37,8 +37,25 @@ namespace KarYonSistemi
         private void LoadSampleData()
         {
             // Load sample products
-            products.Add(new Product { Id = 1, Name = "Laptop", Price = 1000 });
-            products.Add(new Product { Id = 2, Name = "Smartphone", Price = 500 });
+            products.Add(new Product { Id = 1, Name = "Bilgisayar", Price = 1000 });
+            products.Add(new Product { Id = 2, Name = "Ayakkabı", Price = 500 });
+            products.Add(new Product { Id = 3, Name = "Tablet", Price = 300 });
+            products.Add(new Product { Id = 4, Name = "Telefon", Price = 200 });
+            products.Add(new Product { Id = 5, Name = "Kulaklık", Price = 100 });
+            products.Add(new Product { Id = 6, Name = "Klavye", Price = 50 });
+            products.Add(new Product { Id = 7, Name = "Mouse", Price = 25 });
+            products.Add(new Product { Id = 8, Name = "Kablo", Price = 10 });
+            products.Add(new Product { Id = 9, Name = "Kalem", Price = 5 });
+            products.Add(new Product { Id = 10, Name = "Silgi", Price = 2 });
+            products.Add(new Product { Id = 11, Name = "Defter", Price = 1 });
+            products.Add(new Product { Id = 12, Name = "Kalemtraş", Price = 0.5m });
+            products.Add(new Product { Id = 13, Name = "Kurşun Kalem", Price = 0.25m });
+            products.Add(new Product { Id = 14, Name = "Kalem Ucu", Price = 0.1m });
+            products.Add(new Product { Id = 15, Name = "Kalem Kutusu", Price = 0.05m });
+            products.Add(new Product { Id = 16, Name = "Kalem Açacağı", Price = 0.025m });
+            products.Add(new Product { Id = 17, Name = "Kalem Silgisi", Price = 0.0125m });
+            products.Add(new Product { Id = 18, Name = "Kalemtraş Silgisi", Price = 0.00625m });
+
 
             // Load sample cargos
             cargos.Add(new Cargo { Id = 1, Name = "PTT Kargo", PhoneNumber = "444 1 788", Address = "PTT Merkez Müdürlüğü" });
@@ -46,8 +63,16 @@ namespace KarYonSistemi
             cargos.Add(new Cargo { Id = 3, Name = "Yurtiçi Kargo", PhoneNumber = "444 06 06", Address = "Yurtiçi Kargo Merkez Müdürlüğü" });
 
             // Load sample shipments
-            shipments.Add(new ShipmentInfo { Id = 1, ProductId = 1, CargoId = 3, SenderName = "Sender1", ReceiverName = "Receiver1", });
-            shipments.Add(new ShipmentInfo { Id = 2, ProductId = 2, CargoId = 2, SenderName = "Sender2", ReceiverName = "Receiver2", });
+            shipments.Add(new ShipmentInfo { Id = 1, ProductId = 1, CargoId = 3, SenderName = "Ali", ReceiverName = "Ahmet", });
+            shipments.Add(new ShipmentInfo { Id = 2, ProductId = 2, CargoId = 2, SenderName = "Adem", ReceiverName = "Aslan", });
+            shipments.Add(new ShipmentInfo { Id = 3, ProductId = 3, CargoId = 1, SenderName = "Ayşe", ReceiverName = "Aysun", });
+            shipments.Add(new ShipmentInfo { Id = 4, ProductId = 4, CargoId = 3, SenderName = "Bilal", ReceiverName = "Berk", });
+            shipments.Add(new ShipmentInfo { Id = 6, ProductId = 6, CargoId = 1, SenderName = "Cem", ReceiverName = "Ceyda", });
+            shipments.Add(new ShipmentInfo { Id = 7, ProductId = 7, CargoId = 3, SenderName = "Can", ReceiverName = "Cemre", });
+            shipments.Add(new ShipmentInfo { Id = 8, ProductId = 8, CargoId = 2, SenderName = "Derya", ReceiverName = "Deniz", });
+            shipments.Add(new ShipmentInfo { Id = 9, ProductId = 9, CargoId = 1, SenderName = "Dilek", ReceiverName = "Dilan", });
+            shipments.Add(new ShipmentInfo { Id = 10, ProductId = 10, CargoId = 3, SenderName = "Ece", ReceiverName = "Ebru", });
+            shipments.Add(new ShipmentInfo { Id = 11, ProductId = 11, CargoId = 2, SenderName = "Emre", ReceiverName = "Eren", });
 
             // Set the delivery status for the sample shipments
             foreach (var shipment in shipments)
@@ -77,27 +102,33 @@ namespace KarYonSistemi
             dataGridViewProducts.DataSource = null; // Reset 
             dataGridViewProducts.DataSource = GetAvailableProducts();
             dataGridViewProducts.Columns["Id"].DisplayIndex = 0;
+            dataGridViewProducts.Columns["Id"].HeaderText = "Ürün Seri Numarası";
             dataGridViewProducts.Columns["Name"].DisplayIndex = 1;
+            dataGridViewProducts.Columns["Name"].HeaderText = "Ürün Adı";
+            dataGridViewProducts.Columns["Price"].DisplayIndex = 2;
+            dataGridViewProducts.Columns["Price"].HeaderText = "Ürün Fıyatı";
             dataGridViewProducts.Columns["Price"].DisplayIndex = 2;
             dataGridViewProducts.Columns["IsDeleted"].Visible = false;
+            dataGridViewProducts.RowTemplate.MinimumHeight = 40;
         }
 
         private void BindShipmentsDataToGrid()
         {
             dataGridViewShippingHistory.DataSource = null;
+            dataGridViewShippingHistory.CellFormatting += dataGridViewShippingHistory_CellFormatting;
             dataGridViewShippingHistory.DataSource = shipments;
             dataGridViewShippingHistory.Columns["ProductId"].DisplayIndex = 0;
-            dataGridViewShippingHistory.Columns["ProductId"].HeaderText = "Product Id";
+            dataGridViewShippingHistory.Columns["ProductId"].HeaderText = "Ürün Seri Numarası";
             dataGridViewShippingHistory.Columns["CargoId"].DisplayIndex = 1;
-            dataGridViewShippingHistory.Columns["CargoId"].HeaderText = "Cargo Id";
+            dataGridViewShippingHistory.Columns["CargoId"].HeaderText = "Kargo Şirketi";
             dataGridViewShippingHistory.Columns["SenderName"].DisplayIndex = 2;
-            dataGridViewShippingHistory.Columns["SenderName"].HeaderText = "Sender Name";
+            dataGridViewShippingHistory.Columns["SenderName"].HeaderText = "Gönderen";
             dataGridViewShippingHistory.Columns["ReceiverName"].DisplayIndex = 3;
-            dataGridViewShippingHistory.Columns["ReceiverName"].HeaderText = "Receiver Name";
+            dataGridViewShippingHistory.Columns["ReceiverName"].HeaderText = "Alıcı";
             dataGridViewShippingHistory.Columns["IsDelivered"].DisplayIndex = 4;
-            dataGridViewShippingHistory.Columns["IsDelivered"].HeaderText = "Is Delivered";
+            dataGridViewShippingHistory.Columns["IsDelivered"].HeaderText = "Gönderi Durumu";
             dataGridViewShippingHistory.Columns["IsDelivered"].ReadOnly = true;
-            dataGridViewShippingHistory.Columns["IsDelivered"].ToolTipText = "Delivered: Checked";
+            dataGridViewShippingHistory.RowTemplate.MinimumHeight = 40;
 
             // Hide unwanted columns
             dataGridViewShippingHistory.Columns["Id"].Visible = false;
@@ -130,13 +161,27 @@ namespace KarYonSistemi
             comboBoxCargoId.Text = "Kargo seçiniz";
         }
 
-        private void resetDeliveryStatusBoard()
+        private void dataGridViewShippingHistory_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // cargoId column formatting
+            if (dataGridViewShippingHistory.Columns[e.ColumnIndex].Name == "CargoId" && e.Value is int)
+            {
+                int cargoId = (int)e.Value;
+                e.Value = cargos.Find(p => p.Id == cargoId)?.Name ?? "Bilinmiyor";
+                e.FormattingApplied = true; // Indicate that the formatting is applied
+            }
+
+            // productId column formatting
+
+        }
+
+
+        private void ResetDeliveryStatusBoard()
         {
             label2.Text = label2.Text.Split(':')[0];
             label3.Text = label3.Text.Split(':')[0];
             label4.Text = label4.Text.Split(':')[0];
             label5.Text = label5.Text.Split(':')[0];
-
         }
 
         private void ResetProdcutForm()
@@ -181,7 +226,7 @@ namespace KarYonSistemi
         private void button1_Click(object sender, EventArgs e)
         {
             // Reset any previous changes if available
-            resetDeliveryStatusBoard();
+            ResetDeliveryStatusBoard();
 
             if (string.IsNullOrEmpty(textBoxProductId.Text))
             {
@@ -257,8 +302,10 @@ namespace KarYonSistemi
                     ReceiverName = receiverName,
                 };
 
-                // Update the shipment list
-                shipments.Add(shipment);
+                // Update the shipment to the top of the list
+                shipments.Insert(0, shipment);
+
+                // Reset the form
                 ResetShipmentForm();
 
                 // Refresh the DataGridView and Products ComboBox
@@ -372,8 +419,8 @@ namespace KarYonSistemi
             {
                 return;
             }
-
-            decimal productPrice = decimal.Parse(textBoxProductPrice.Text);
+            // use try safe parse
+            var productPrice = decimal.Parse(price);
 
             // Create a new product
             Product product = new Product
@@ -383,8 +430,8 @@ namespace KarYonSistemi
                 Price = productPrice
             };
 
-            // Add product to the list
-            products.Add(product);
+            // Add product to the top of the list
+            products.Insert(0, product);
 
             // Refresh the DataGridView and ComboBox
             BindProductsDataToGrid();
