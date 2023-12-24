@@ -21,3 +21,7 @@ KarYonSistemi/obj/*
 .vscode/
 .idea/
 .vs/
+KarYonSistemi/obj/Debug/KarYonSistemi.pdb
+KarYonSistemi/bin/Debug/KarYonSistemi.pdb
+/KarYonSistemi/bin/Debug/KarYonSistemi.pdb
+/KarYonSistemi/obj/Debug/KarYonSistemi.pdb

@@ -17,10 +17,10 @@ namespace KarYonSistemi
         {
             Console.WriteLine($"Yurtici Kargo: Product {shipmentInfo.ProductId} is being delivered. Estimated time: 45 seconds.");
 
-            // Simulate delivery time asynchronously
-            await Task.Delay(10000); // Using Wait to block synchronously for the example
+            // Gönderi teslim süresini simüle etmek için
+            await Task.Delay(10000); // 10 saniye sonra teslim edildi olarak güncellenmesi için
 
-            shipmentInfo.SetDeliveryStatus(true); // Update the delivery status
+            shipmentInfo.SetDeliveryStatus(true);
             Console.WriteLine($"Product {shipmentInfo.ProductId} delivered by Yurtici Kargo.");
         }
 
