@@ -250,12 +250,13 @@
             // 
             // btnCheckDeliveryStatus
             // 
-            this.btnCheckDeliveryStatus.Location = new System.Drawing.Point(209, 42);
+            this.btnCheckDeliveryStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnCheckDeliveryStatus.Location = new System.Drawing.Point(401, 41);
             this.btnCheckDeliveryStatus.Name = "btnCheckDeliveryStatus";
             this.btnCheckDeliveryStatus.Size = new System.Drawing.Size(255, 36);
             this.btnCheckDeliveryStatus.TabIndex = 2;
             this.btnCheckDeliveryStatus.Text = "Check Delivery Status";
-            this.btnCheckDeliveryStatus.UseVisualStyleBackColor = true;
+            this.btnCheckDeliveryStatus.UseVisualStyleBackColor = false;
             this.btnCheckDeliveryStatus.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBoxProductId
@@ -263,13 +264,14 @@
             this.textBoxProductId.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxProductId.Location = new System.Drawing.Point(6, 41);
             this.textBoxProductId.Name = "textBoxProductId";
-            this.textBoxProductId.Size = new System.Drawing.Size(179, 36);
+            this.textBoxProductId.Size = new System.Drawing.Size(300, 36);
             this.textBoxProductId.TabIndex = 1;
             this.textBoxProductId.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label1.Location = new System.Drawing.Point(6, 4);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(234, 25);
@@ -421,12 +423,13 @@
             // 
             // btnStartShipping
             // 
+            this.btnStartShipping.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnStartShipping.Location = new System.Drawing.Point(763, 61);
             this.btnStartShipping.Name = "btnStartShipping";
             this.btnStartShipping.Size = new System.Drawing.Size(199, 52);
             this.btnStartShipping.TabIndex = 4;
             this.btnStartShipping.Text = "Start Shipping";
-            this.btnStartShipping.UseVisualStyleBackColor = true;
+            this.btnStartShipping.UseVisualStyleBackColor = false;
             this.btnStartShipping.Click += new System.EventHandler(this.button2_Click);
             // 
             // comboBoxCargoId
@@ -452,6 +455,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label6.Location = new System.Drawing.Point(13, 10);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(167, 25);
@@ -523,12 +527,13 @@
             // 
             // btnAddToCatalog
             // 
-            this.btnAddToCatalog.Location = new System.Drawing.Point(760, 36);
+            this.btnAddToCatalog.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnAddToCatalog.Location = new System.Drawing.Point(760, 33);
             this.btnAddToCatalog.Name = "btnAddToCatalog";
-            this.btnAddToCatalog.Size = new System.Drawing.Size(199, 34);
+            this.btnAddToCatalog.Size = new System.Drawing.Size(199, 41);
             this.btnAddToCatalog.TabIndex = 5;
             this.btnAddToCatalog.Text = "Add To Catalog";
-            this.btnAddToCatalog.UseVisualStyleBackColor = true;
+            this.btnAddToCatalog.UseVisualStyleBackColor = false;
             this.btnAddToCatalog.Click += new System.EventHandler(this.btnAddToCatalog_Click);
             // 
             // label10
@@ -569,6 +574,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label8.Location = new System.Drawing.Point(13, 4);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(235, 25);
