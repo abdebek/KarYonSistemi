@@ -23,14 +23,14 @@ namespace KarTeYoSis
             Icon = Icon.ExtractAssociatedIcon(System.Reflection.Assembly.GetExecutingAssembly().Location);
 
             // Initialize your cargo companies
-            // currentDeliveryService = new PTTKargo();
+            currentDeliveryService = new PTTKargo();
 
             // Load sample data or connect to a database
-            // LoadSampleData();
+            LoadSampleData();
 
             // Bind data to DataGridViews
-            // BindProductData();
-            // BindShipmentData();
+            BindProductData();
+            BindShipmentData();
         }
 
         private void LoadSampleData()
@@ -43,6 +43,67 @@ namespace KarTeYoSis
             shipments.Add(new ShipmentInfo { Id = 1, ProductId = 1, SenderName = "Sender1", ReceiverName = "Receiver1" });
             shipments.Add(new ShipmentInfo { Id = 2, ProductId = 2, SenderName = "Sender2", ReceiverName = "Receiver2" });
         }
+
+        private void BindProductData()
+        {
+            dataGridViewProducts.DataSource = products;
+        }
+
+        private void BindShipmentData()
+        {
+            dataGridViewShippingHistory.DataSource = shipments;
+        }
+
+        private void buttonAddProduct_Click(object sender, EventArgs e)
+        {
+            // // Get product name and price from textboxes
+            // string productName = textBoxProductName.Text;
+            // decimal productPrice = decimal.Parse(textBoxProductPrice.Text);
+
+            // // Create a new product
+            // Product product = new Product
+            // {
+            //     Id = products.Count + 1,
+            //     Name = productName,
+            //     Price = productPrice
+            // };
+
+            // // Add product to the list
+            // products.Add(product);
+
+            // // Refresh the DataGridView
+            // BindProductData();
+        }
+
+
+        private void buttonShipProduct_Click(object sender, EventArgs e)
+        {
+            // Get selected product
+            //Product selectedProduct = (Product)dataGridViewProducts.SelectedRows[0].DataBoundItem;
+
+            //Get sender and receiver names from textboxes
+            //string senderName = textBoxSenderName.Text;
+            //string receiverName = textBoxReceiverName.Text;
+
+            //Create a new shipment
+            //ShipmentInfo shipment = new ShipmentInfo
+            //{
+            //    Id = shipments.Count + 1,
+            //    ProductId = selectedProduct.Id,
+            //    SenderName = senderName,
+            //    ReceiverName = receiverName
+            //};
+
+            //Add shipment to the list
+            //shipments.Add(shipment);
+
+            //Refresh the DataGridView
+            //BindShipmentData();
+
+            //Ship the product
+            //currentDeliveryService.SendCargo(shipment);
+        }
+
 
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -115,6 +176,46 @@ namespace KarTeYoSis
         }
 
         private void label16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridViewShippingHistory_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxProductId_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxCargoId_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
         {
 
         }

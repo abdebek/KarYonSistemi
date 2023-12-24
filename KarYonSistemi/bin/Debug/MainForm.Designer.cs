@@ -55,6 +55,10 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.btnStartShipping = new System.Windows.Forms.Button();
             this.comboBoxCargoId = new System.Windows.Forms.ComboBox();
             this.comboBoxProductId = new System.Windows.Forms.ComboBox();
@@ -191,6 +195,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(850, 197);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel2
             // 
@@ -224,7 +229,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 62);
+            this.label3.Location = new System.Drawing.Point(7, 62);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(179, 25);
             this.label3.TabIndex = 5;
@@ -234,7 +239,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 14);
+            this.label2.Location = new System.Drawing.Point(7, 14);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(167, 25);
             this.label2.TabIndex = 4;
@@ -253,7 +258,7 @@
             // textBoxProductId
             // 
             this.textBoxProductId.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxProductId.Location = new System.Drawing.Point(15, 41);
+            this.textBoxProductId.Location = new System.Drawing.Point(6, 41);
             this.textBoxProductId.Name = "textBoxProductId";
             this.textBoxProductId.Size = new System.Drawing.Size(179, 36);
             this.textBoxProductId.TabIndex = 1;
@@ -262,7 +267,8 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 4);
+            this.label1.Enabled = false;
+            this.label1.Location = new System.Drawing.Point(6, 4);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(234, 25);
             this.label1.TabIndex = 0;
@@ -294,16 +300,18 @@
             this.dataGridViewShippingHistory.Name = "dataGridViewShippingHistory";
             this.dataGridViewShippingHistory.Size = new System.Drawing.Size(850, 597);
             this.dataGridViewShippingHistory.TabIndex = 8;
+            this.dataGridViewShippingHistory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewShippingHistory_CellContentClick);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.SystemColors.Info;
-            this.label7.Location = new System.Drawing.Point(15, 12);
+            this.label7.Location = new System.Drawing.Point(6, 12);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(191, 25);
             this.label7.TabIndex = 5;
             this.label7.Text = "Shipment History";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // flowLayoutPanel3
             // 
@@ -359,20 +367,59 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.textBox2);
+            this.panel3.Controls.Add(this.label18);
+            this.panel3.Controls.Add(this.textBox1);
+            this.panel3.Controls.Add(this.label17);
             this.panel3.Controls.Add(this.btnStartShipping);
             this.panel3.Controls.Add(this.comboBoxCargoId);
             this.panel3.Controls.Add(this.comboBoxProductId);
             this.panel3.Controls.Add(this.label6);
-            this.panel3.Location = new System.Drawing.Point(6, 133);
+            this.panel3.Location = new System.Drawing.Point(3, 93);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1004, 91);
+            this.panel3.Size = new System.Drawing.Size(1007, 131);
             this.panel3.TabIndex = 0;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(183, 91);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(218, 36);
+            this.textBox2.TabIndex = 11;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(17, 98);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(166, 25);
+            this.label18.TabIndex = 8;
+            this.label18.Text = "Reciver Name:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(183, 43);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(218, 36);
+            this.textBox1.TabIndex = 10;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(16, 50);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(161, 25);
+            this.label17.TabIndex = 10;
+            this.label17.Text = "Sender Name:";
             // 
             // btnStartShipping
             // 
-            this.btnStartShipping.Location = new System.Drawing.Point(728, 53);
+            this.btnStartShipping.Location = new System.Drawing.Point(763, 61);
             this.btnStartShipping.Name = "btnStartShipping";
-            this.btnStartShipping.Size = new System.Drawing.Size(199, 34);
+            this.btnStartShipping.Size = new System.Drawing.Size(199, 52);
             this.btnStartShipping.TabIndex = 4;
             this.btnStartShipping.Text = "Start Shipping";
             this.btnStartShipping.UseVisualStyleBackColor = true;
@@ -381,25 +428,27 @@
             // comboBoxCargoId
             // 
             this.comboBoxCargoId.FormattingEnabled = true;
-            this.comboBoxCargoId.Location = new System.Drawing.Point(378, 55);
+            this.comboBoxCargoId.Location = new System.Drawing.Point(439, 50);
             this.comboBoxCargoId.Name = "comboBoxCargoId";
             this.comboBoxCargoId.Size = new System.Drawing.Size(284, 33);
             this.comboBoxCargoId.TabIndex = 3;
             this.comboBoxCargoId.Text = "Select a Cargo Company";
+            this.comboBoxCargoId.SelectedIndexChanged += new System.EventHandler(this.comboBoxCargoId_SelectedIndexChanged);
             // 
             // comboBoxProductId
             // 
             this.comboBoxProductId.FormattingEnabled = true;
-            this.comboBoxProductId.Location = new System.Drawing.Point(18, 55);
+            this.comboBoxProductId.Location = new System.Drawing.Point(439, 101);
             this.comboBoxProductId.Name = "comboBoxProductId";
-            this.comboBoxProductId.Size = new System.Drawing.Size(312, 33);
+            this.comboBoxProductId.Size = new System.Drawing.Size(284, 33);
             this.comboBoxProductId.TabIndex = 2;
             this.comboBoxProductId.Text = "Select a Cargo Product";
+            this.comboBoxProductId.SelectedIndexChanged += new System.EventHandler(this.comboBoxProductId_SelectedIndexChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(13, 15);
+            this.label6.Location = new System.Drawing.Point(13, 10);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(167, 25);
             this.label6.TabIndex = 1;
@@ -444,13 +493,14 @@
             this.label11.Size = new System.Drawing.Size(209, 25);
             this.label11.TabIndex = 2;
             this.label11.Text = "Available Products";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // flowLayoutPanel5
             // 
             this.flowLayoutPanel5.Controls.Add(this.panel5);
             this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 6);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(1007, 121);
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(1007, 98);
             this.flowLayoutPanel5.TabIndex = 0;
             // 
             // panel5
@@ -463,12 +513,12 @@
             this.panel5.Controls.Add(this.label8);
             this.panel5.Location = new System.Drawing.Point(3, 3);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(995, 113);
+            this.panel5.Size = new System.Drawing.Size(1001, 78);
             this.panel5.TabIndex = 0;
             // 
             // btnAddToCatalog
             // 
-            this.btnAddToCatalog.Location = new System.Drawing.Point(728, 48);
+            this.btnAddToCatalog.Location = new System.Drawing.Point(760, 36);
             this.btnAddToCatalog.Name = "btnAddToCatalog";
             this.btnAddToCatalog.Size = new System.Drawing.Size(199, 34);
             this.btnAddToCatalog.TabIndex = 5;
@@ -477,26 +527,26 @@
             // 
             // label10
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(460, 52);
+            this.label10.AutoSize = false;
+            this.label10.Location = new System.Drawing.Point(431, 41);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(73, 25);
+            this.label10.Size = new System.Drawing.Size(167, 25);
             this.label10.TabIndex = 9;
             this.label10.Text = "Price:";
             // 
             // textBoxProductPrice
             // 
             this.textBoxProductPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxProductPrice.Location = new System.Drawing.Point(539, 46);
+            this.textBoxProductPrice.Location = new System.Drawing.Point(512, 34);
             this.textBoxProductPrice.Name = "textBoxProductPrice";
-            this.textBoxProductPrice.Size = new System.Drawing.Size(114, 36);
+            this.textBoxProductPrice.Size = new System.Drawing.Size(167, 36);
             this.textBoxProductPrice.TabIndex = 8;
             this.textBoxProductPrice.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label9
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(13, 52);
+            this.label9.AutoSize = false;
+            this.label9.Location = new System.Drawing.Point(13, 41);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(167, 25);
             this.label9.TabIndex = 7;
@@ -505,9 +555,9 @@
             // textBoxProductName
             // 
             this.textBoxProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxProductName.Location = new System.Drawing.Point(186, 46);
+            this.textBoxProductName.Location = new System.Drawing.Point(186, 34);
             this.textBoxProductName.Name = "textBoxProductName";
-            this.textBoxProductName.Size = new System.Drawing.Size(251, 36);
+            this.textBoxProductName.Size = new System.Drawing.Size(225, 36);
             this.textBoxProductName.TabIndex = 2;
             // 
             // label8
@@ -608,6 +658,10 @@
         private System.Windows.Forms.Button btnCheckDeliveryStatus;
         private System.Windows.Forms.TextBox textBoxProductId;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
