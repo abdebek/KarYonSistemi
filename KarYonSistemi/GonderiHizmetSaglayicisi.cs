@@ -27,7 +27,7 @@ namespace KarYonSistemi
 
 
         /// <summary>
-        /// Gonderis the sureclerini yonet.
+        /// Gönderi süreçlerini yönetir.
         /// Virtual metot: kalıtım alan sınıflar tarafından override edilebilir
         /// </summary>
         /// <param name="gonderi">gönderi</param>

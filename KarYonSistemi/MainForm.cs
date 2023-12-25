@@ -5,7 +5,11 @@ using System.Drawing;
 
 namespace KarYonSistemi
 {
-    internal partial class MainForm : Form
+    /// <summary>
+    /// KarYönSistemi: Kargo Yönetim Sistemi uygaması için ana form (ekran).
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.Form" />
+    internal partial class AnaForm : Form
     {
         private GonderiYonetimSistemi gonderiYonetimSistemi = GonderiYonetimSistemi.Temsilci;
 
@@ -13,7 +17,7 @@ namespace KarYonSistemi
         {
         }
 
-        public MainForm()
+        public AnaForm()
         {
             InitializeComponent();
             Icon = Icon.ExtractAssociatedIcon(System.Reflection.Assembly.GetExecutingAssembly().Location);

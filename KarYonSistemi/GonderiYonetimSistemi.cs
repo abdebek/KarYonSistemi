@@ -32,6 +32,11 @@ namespace KarYonSistemi
             TohumVerileri.OrnekGonderileriEkle(gonderiler);
         }
 
+        /// <summary>
+        /// Bu sınıfın tekil nesnesini döndürür.
+        /// Bu sınftan birden fazla nesnelerin oluşturulmasını engeller.
+        /// </summary>
+        /// <returns> GonderiYonetimSistemi </returns>
         public static GonderiYonetimSistemi Temsilci
         {
             get
@@ -69,12 +74,20 @@ namespace KarYonSistemi
             gonderiler.Insert(0, gonderi);
         }
 
+        /// <summary>
+        /// Bir Gönderi hizmet saglayicisi bulmak için kullanılır.
+        /// </summary>
+        /// <param name="seriNo">seri no</param>
+        /// <returns></returns>
         public GonderiHizmetSaglayicisi GonderiHizmetSaglayicisiBul(int seriNo)
         {
             return gonderiHizmetSaglayicileri.FirstOrDefault(g => g.SeriNo == seriNo);
         }
 
-        // Gönderilmemiş ürünleri getir
+        /// <summary>
+        /// Mevcuts (Gönderilmemiş) the urunleri getir.
+        /// </summary>
+        /// <returns></returns>
         public List<Urun> MevcutUrunleriGetir()
         {
             List<Urun> gonderilmemisUrunler = new List<Urun>();
@@ -89,6 +102,10 @@ namespace KarYonSistemi
             return gonderilmemisUrunler;
         }
 
+        /// <summary>
+        /// Gönderi işlemlerini başlatır.
+        /// </summary>
+        /// <param name="gonderi">gonderi</param>
         public async Task KargoyaVer(Gonderi gonderi)
         {
             GonderiHizmetSaglayicisi secilenGonderiHizmetSaglayicisi = GonderiHizmetSaglayicisiBul(gonderi.KargoNo);

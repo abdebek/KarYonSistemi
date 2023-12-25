@@ -12,7 +12,6 @@ C:\Users\A\source\repos\KarTeYoSis\KarTeYoSis\obj\Debug\KarYonSistemi.Properties
 C:\Users\A\source\repos\KarTeYoSis\KarTeYoSis\obj\Debug\KarYonSistemi.exe
 C:\Users\A\source\repos\KarTeYoSis\KarTeYoSis\obj\Debug\KarYonSistemi.pdb
 C:\Users\A\source\repos\KarYonSistemi\KarYonSistemi\obj\Debug\KarYonSistemi.csproj.AssemblyReference.cache
-C:\Users\A\source\repos\KarYonSistemi\KarYonSistemi\obj\Debug\KarYonSistemi.MainForm.resources
 C:\Users\A\source\repos\KarYonSistemi\KarYonSistemi\obj\Debug\KarYonSistemi.Properties.Resources.resources
 C:\Users\A\source\repos\KarYonSistemi\KarYonSistemi\obj\Debug\KarYonSistemi.csproj.GenerateResource.cache
 C:\Users\A\source\repos\KarYonSistemi\KarYonSistemi\obj\Debug\KarYonSistemi.csproj.CoreCompileInputs.cache
@@ -24,3 +23,4 @@ C:\Users\A\source\repos\KarYonSistemi\KarYonSistemi\bin\Debug\KarYonSistemi.exe
 C:\Users\A\source\repos\KarYonSistemi\KarYonSistemi\bin\Debug\KarYonSistemi.pdb
 C:\Users\A\source\repos\KarYonSistemi\KarYonSistemi\obj\Debug\KarYonSistemi.exe
 C:\Users\A\source\repos\KarYonSistemi\KarYonSistemi\obj\Debug\KarYonSistemi.pdb
+C:\Users\A\source\repos\KarYonSistemi\KarYonSistemi\obj\Debug\KarYonSistemi.AnaForm.resources
