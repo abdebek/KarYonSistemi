@@ -8,24 +8,22 @@ namespace KarYonSistemi
     {
         // Singleton instance
         private static readonly PTTKargo instance = new PTTKargo();
+        private int _tahminiBeklemeSuresi = 5000;
         public override int Id { get; set; } = 1;
         public override string Name { get; set; } = "PTT Kargo";
+        protected override string dahiliTelNo => "444 10 01";
+        protected override int TahminiBeklemeSuresi { get => _tahminiBeklemeSuresi; }
         public override string PhoneNumber { get; set; } = "444 17 88";
         public override string Address { get; set; } = "Ankara";
 
         private PTTKargo() { }
         public static PTTKargo Instance => instance;
 
+
         // Override the abstract method to implement specific behavior for PTT Kargo
         public override async Task SendCargo(ShipmentInfo shipmentInfo)
         {
-            Console.WriteLine($"PTT Kargo: Product {shipmentInfo.ProductId} is being delivered. Estimated time: 45 seconds.");
-
-            // Gönderi teslim süresini simüle etmek için
-            await Task.Delay(5000); // 5 saniye sonra teslim edildi olarak güncellenmesi için
-
-            shipmentInfo.SetDeliveryStatus(true); //
-            Console.WriteLine($"Product {shipmentInfo.ProductId} delivered by PTT Kargo.");
+            await ProcessDelivery(shipmentInfo, instance);
         }
 
     }

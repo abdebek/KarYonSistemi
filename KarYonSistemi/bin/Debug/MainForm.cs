@@ -2,7 +2,6 @@
 using System;
 using System.Windows.Forms;
 using System.Drawing;
-using System.Threading.Tasks;
 
 namespace KarYonSistemi
 {
@@ -62,16 +61,15 @@ namespace KarYonSistemi
             products.Add(new Product(17, "Kalem Silgisi", 0.0125m));
             products.Add(new Product(18, "Kalemtraş Silgisi", 0.00625m));
 
-
             // Load sample shipments
             shipments.Add(new ShipmentInfo(1, 1, 3, "Ali", "Ahmet"));
-            shipments.Add(new ShipmentInfo(2, 2, 2, "Adem", "Aslan"));
-            shipments.Add(new ShipmentInfo(3, 0, 1, "Ayşe", "Aysun"));
+            shipments.Add(new ShipmentInfo(2, 0, 2, "Adem", "Aslan"));
+            shipments.Add(new ShipmentInfo(3, 2, 1, "Ayşe", "Aysun"));
             shipments.Add(new ShipmentInfo(4, 1, 4, "Bilal", "Berk"));
             shipments.Add(new ShipmentInfo(6, 0, 6, "Cem", "Ceyda"));
             shipments.Add(new ShipmentInfo(7, 1, 9, "Can", "Cemre"));
-            shipments.Add(new ShipmentInfo(8, 2, 12, "Derya", "Deniz"));
-            shipments.Add(new ShipmentInfo(9, 0, 11, "Dilek", "Dilan"));
+            shipments.Add(new ShipmentInfo(8, 0, 12, "Derya", "Deniz"));
+            shipments.Add(new ShipmentInfo(9, 2, 11, "Dilek", "Dilan"));
             shipments.Add(new ShipmentInfo(10, 1, 13, "Ece", "Ebru"));
             shipments.Add(new ShipmentInfo(11, 2, 7, "Emre", "Eren"));
 

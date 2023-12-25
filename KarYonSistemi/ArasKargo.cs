@@ -9,8 +9,11 @@ namespace KarYonSistemi
     {
         // Singleton instance
         private static readonly ArasKargo instance = new ArasKargo();
+        private int _tahminiBeklemeSuresi = 60000;
         public override int Id { get; set; } = 0;
         public override string Name { get; set; } = "Aras Kargo";
+        protected override string dahiliTelNo => "444 10 00";
+        // TahminiBeklemeSuresi override edilmediği için ebeveyn sınıftaki değer kullanılacak
         public override string PhoneNumber { get; set; } = "444 25 52";
         public override string Address { get; set; } = "İstanbul";
 
@@ -25,13 +28,7 @@ namespace KarYonSistemi
         // Override the abstract method to implement specific behavior for Aras Kargo
         public override async Task SendCargo(ShipmentInfo shipmentInfo)
         {
-            Console.WriteLine($"Aras Kargo: Product {shipmentInfo.ProductId} is being delivered. Estimated time: 45 seconds.");
-
-            // Gönderi teslim süresini simüle etmek için
-            await Task.Delay(60000); // Bir dakika sonra teslim edildi olarak güncellenmesi için
-
-            shipmentInfo.SetDeliveryStatus(true); // Update the delivery status
-            Console.WriteLine($"Product {shipmentInfo.ProductId} delivered by Aras Kargo.");
+            await ProcessDelivery(shipmentInfo, instance);
         }
 
     }
