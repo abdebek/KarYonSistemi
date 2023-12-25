@@ -8,6 +8,11 @@ namespace KarYonSistemi
     {
         // Singleton instance
         private static readonly PTTKargo instance = new PTTKargo();
+        public override int Id { get; set; } = 1;
+        public override string Name { get; set; } = "PTT Kargo";
+        public override string PhoneNumber { get; set; } = "444 17 88";
+        public override string Address { get; set; } = "Ankara";
+
         private PTTKargo() { }
         public static PTTKargo Instance => instance;
 

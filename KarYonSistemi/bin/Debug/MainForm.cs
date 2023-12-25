@@ -9,7 +9,12 @@ namespace KarYonSistemi
     {
         private List<Product> products = new List<Product>();
         private List<ShipmentInfo> shipments = new List<ShipmentInfo>();
-        private List<Cargo> cargos = new List<Cargo>();
+        private List<DeliveryService> deliveryServices = new List<DeliveryService> {
+            PTTKargo.Instance,
+            ArasKargo.Instance,
+            YurticiKargo.Instance
+        };
+
         private IDeliveryService currentDeliveryService;
 
         private void MainForm_Load(object sender, System.EventArgs e)
@@ -55,12 +60,6 @@ namespace KarYonSistemi
             products.Add(new Product { Id = 16, Name = "Kalem Açacağı", Price = 0.025m });
             products.Add(new Product { Id = 17, Name = "Kalem Silgisi", Price = 0.0125m });
             products.Add(new Product { Id = 18, Name = "Kalemtraş Silgisi", Price = 0.00625m });
-
-
-            // Load sample cargos
-            cargos.Add(new Cargo { Id = 1, Name = "PTT Kargo", PhoneNumber = "444 1 788", Address = "PTT Merkez Müdürlüğü" });
-            cargos.Add(new Cargo { Id = 2, Name = "Aras Kargo", PhoneNumber = "444 2 277", Address = "Aras Kargo Merkez Müdürlüğü" });
-            cargos.Add(new Cargo { Id = 3, Name = "Yurtiçi Kargo", PhoneNumber = "444 06 06", Address = "Yurtiçi Kargo Merkez Müdürlüğü" });
 
             // Load sample shipments
             shipments.Add(new ShipmentInfo { Id = 1, ProductId = 1, CargoId = 3, SenderName = "Ali", ReceiverName = "Ahmet", });
@@ -152,7 +151,7 @@ namespace KarYonSistemi
         private void BindCargosToComboBox()
         {
             comboBoxCargoId.DataSource = null;
-            comboBoxCargoId.DataSource = cargos;
+            comboBoxCargoId.DataSource = deliveryServices;
             comboBoxCargoId.DisplayMember = "Name";
             comboBoxCargoId.ValueMember = "Id";
 
@@ -167,7 +166,7 @@ namespace KarYonSistemi
             if (dataGridViewShippingHistory.Columns[e.ColumnIndex].Name == "CargoId" && e.Value is int)
             {
                 int cargoId = (int)e.Value;
-                e.Value = cargos.Find(p => p.Id == cargoId)?.Name ?? "Bilinmiyor";
+                e.Value = deliveryServices.Find(p => p.Id == cargoId)?.Name ?? "Bilinmiyor";
                 e.FormattingApplied = true; // Indicate that the formatting is applied
             }
 
@@ -282,7 +281,7 @@ namespace KarYonSistemi
             try
             {
                 Product selectedProduct = comboBoxProductId.SelectedItem as Product;
-                Cargo selectedCargo = comboBoxCargoId.SelectedItem as Cargo;
+                DeliveryService selectedCargo = comboBoxCargoId.SelectedItem as DeliveryService;
 
                 if (selectedProduct == null || selectedCargo == null)
                 {
@@ -436,6 +435,11 @@ namespace KarYonSistemi
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label19_Click(object sender, EventArgs e)
         {
 
         }

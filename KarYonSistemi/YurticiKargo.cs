@@ -9,6 +9,11 @@ namespace KarYonSistemi
     {
         // Singleton instance
         private static readonly YurticiKargo instance = new YurticiKargo();
+        public override int Id { get; set; } = 2;
+        public override string Name { get; set; } = "Yurtici Kargo";
+        public override string PhoneNumber { get; set; } = "444 99 99";
+        public override string Address { get; set; } = "İzmir";
+
         private YurticiKargo() { }
         public static YurticiKargo Instance => instance;
 

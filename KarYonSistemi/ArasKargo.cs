@@ -9,6 +9,10 @@ namespace KarYonSistemi
     {
         // Singleton instance
         private static readonly ArasKargo instance = new ArasKargo();
+        public override int Id { get; set; } = 0;
+        public override string Name { get; set; } = "Aras Kargo";
+        public override string PhoneNumber { get; set; } = "444 25 52";
+        public override string Address { get; set; } = "İstanbul";
 
         // Private constructor to prevent instantiation
         private ArasKargo()

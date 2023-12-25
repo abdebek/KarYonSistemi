@@ -61,7 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArasKargo.cs" />
-    <Compile Include="Cargo.cs" />
+    <Compile Include="ICargo.cs" />
     <Compile Include="DeliveryService.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="IDeliveryService.cs" />
