@@ -38,8 +38,8 @@ namespace KarYonSistemi
         public static void OrnekGonderileriEkle(List<Gonderi> gonderiler)
         {
             gonderiler.Add(new Gonderi(1, 1, 3, "Ali", "Ahmet"));
-            gonderiler.Add(new Gonderi(2, 2, 2, "Adem", "Aslan"));
-            gonderiler.Add(new Gonderi(3, 0, 1, "Ayşe", "Aysun"));
+            gonderiler.Add(new Gonderi(2, 0, 2, "Adem", "Aslan"));
+            gonderiler.Add(new Gonderi(3, 1, 1, "Ayşe", "Aysun"));
             gonderiler.Add(new Gonderi(4, 1, 6, "Bilal", "Berk"));
             gonderiler.Add(new Gonderi(6, 0, 4, "Cem", "Ceyda"));
             gonderiler.Add(new Gonderi(7, 1, 5, "Can", "Cemre"));
@@ -49,7 +49,7 @@ namespace KarYonSistemi
             gonderiler.Add(new Gonderi(11, 2, 11, "Emre", "Eren"));
             gonderiler.Add(new Gonderi(12, 0, 10, "Fatma", "Ferhat"));
             gonderiler.Add(new Gonderi(14, 2, 14, "Gizem", "Gül"));
-            gonderiler.Add(new Gonderi(15, 0, 13, "Gül", "Gülay"));
+            gonderiler.Add(new Gonderi(15, 1, 13, "Gül", "Gülay"));
         }
     }
 }

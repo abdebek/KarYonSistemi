@@ -61,6 +61,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArasKargo.cs" />
+    <Compile Include="GonderiYonetimSistemi.cs" />
+    <Compile Include="IGonderiBilgi.cs" />
     <Compile Include="IKargo.cs" />
     <Compile Include="GonderiHizmetSaglayicisi.cs" />
     <Compile Include="TohumVerileri.cs" />

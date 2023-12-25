@@ -7,19 +7,10 @@ namespace KarYonSistemi
 {
     internal partial class MainForm : Form
     {
-        private List<Urun> urunler = new List<Urun>();
-        private List<Gonderi> gonderiler = new List<Gonderi>();
-        private List<GonderiHizmetSaglayicisi> gonderiHizmetSaglayicileri = new List<GonderiHizmetSaglayicisi> {
-            ArasKargo.Temsilci,
-            PTTKargo.Temsilci,
-            YurticiKargo.Temsilci
-        };
-
-        private IGonderiHizmetSaglayicisi secilenGonderiHizmetSaglayicisi;
+        private GonderiYonetimSistemi gonderiYonetimSistemi = GonderiYonetimSistemi.Temsilci;
 
         private void MainForm_Load(object sender, System.EventArgs e)
         {
-
         }
 
         public MainForm()
@@ -27,12 +18,10 @@ namespace KarYonSistemi
             InitializeComponent();
             Icon = Icon.ExtractAssociatedIcon(System.Reflection.Assembly.GetExecutingAssembly().Location);
 
-            // Örnek verileri oluşturur
-            OrnekVerileriYukle();
+            OrnekGonderileriKargoyaVer();
 
             // Oluşturulan örnek verileri DataGridView (Tablo) ve ComboBox'a yükler
-            GonderilmemisUrunleriGrideBagla();
-            GonderileriGrideBagla();
+            GridleriYenile();
 
             // Gönderilmemiş ürünleri ComboBox'a yükler
             GonderilmemisUrunleriComboBoxaBagla();
@@ -45,14 +34,10 @@ namespace KarYonSistemi
             GonderilmemisUrunleriGrideBagla();
         }
 
-        private async void OrnekVerileriYukle()
+        private void OrnekGonderileriKargoyaVer()
         {
-            // Örnek verileri yükle
-            TohumVerileri.OrnekUrunleriEkle(urunler);
-            TohumVerileri.OrnekGonderileriEkle(gonderiler);
-
             // Örnek gönderileri kargoya ver
-            foreach (var gonderi in gonderiler)
+            foreach (var gonderi in gonderiYonetimSistemi.gonderiler)
             {
                 KargoyaVer(gonderi);
             };
@@ -60,30 +45,20 @@ namespace KarYonSistemi
 
         private async void KargoyaVer(Gonderi gonderi)
         {
-            var secilenGonderiHizmetSaglayicisi = GetDeliveryService(gonderi.KargoNo);
-            await secilenGonderiHizmetSaglayicisi.KargoGonder(gonderi);
-
+            await gonderiYonetimSistemi.KargoyaVer(gonderi);
             GonderileriGrideBagla();
         }
 
         // Gönderilmemiş ürünleri getir
         private List<Urun> GonderilmemisUrunleriGetir()
         {
-            List<Urun> gonderilmemisUrunler = new List<Urun>();
-            foreach (var urun in urunler)
-            {
-                if (!gonderiler.Exists(p => p.UrunNo == urun.SeriNo))
-                {
-                    gonderilmemisUrunler.Add(urun);
-                }
-            }
-
-            return gonderilmemisUrunler;
+            return gonderiYonetimSistemi.GonderilmemisUrunleriGetir();
         }
 
         private void GonderilmemisUrunleriGrideBagla()
         {
-            dataGridViewProducts.DataSource = null; // Önce temizle 
+            //dataGridViewProducts.DataSource = null; // Önce temizle 
+            dataGridViewProducts.Visible = false;
             dataGridViewProducts.DataSource = GonderilmemisUrunleriGetir();
             dataGridViewProducts.Columns["SeriNo"].DisplayIndex = 0;
             dataGridViewProducts.Columns["SeriNo"].HeaderText = "Ürün Seri Numarası";
@@ -94,29 +69,32 @@ namespace KarYonSistemi
             dataGridViewProducts.Columns["Fiyati"].DisplayIndex = 2;
             dataGridViewProducts.Columns["Silinmis"].Visible = false;
             dataGridViewProducts.RowTemplate.MinimumHeight = 40;
+            dataGridViewProducts.Visible = true;
         }
 
         private void GonderileriGrideBagla()
         {
             dataGridViewShippingHistory.DataSource = null;
             dataGridViewShippingHistory.CellFormatting += dataGridViewShippingHistory_CellFormatting;
-            dataGridViewShippingHistory.DataSource = gonderiler;
-            dataGridViewShippingHistory.Columns["UrunNo"].DisplayIndex = 0;
-            dataGridViewShippingHistory.Columns["UrunNo"].HeaderText = "Ürün Seri Numarası";
-            dataGridViewShippingHistory.Columns["KargoNo"].DisplayIndex = 1;
-            dataGridViewShippingHistory.Columns["KargoNo"].HeaderText = "Kargo Şirketi";
-            dataGridViewShippingHistory.Columns["Gonderici"].DisplayIndex = 2;
-            dataGridViewShippingHistory.Columns["Gonderici"].HeaderText = "Gönderen";
-            dataGridViewShippingHistory.Columns["Alici"].DisplayIndex = 3;
-            dataGridViewShippingHistory.Columns["Alici"].HeaderText = "Alıcı";
-            dataGridViewShippingHistory.Columns["TeslimEdildi"].DisplayIndex = 4;
-            dataGridViewShippingHistory.Columns["TeslimEdildi"].HeaderText = "Gönderi Durumu";
-            dataGridViewShippingHistory.Columns["TeslimEdildi"].ReadOnly = true;
-            dataGridViewShippingHistory.RowTemplate.MinimumHeight = 40;
+            dataGridViewShippingHistory.DataSource = gonderiYonetimSistemi.gonderiler;
 
             // Gösterilmemesi gereken sütunları gizle
             dataGridViewShippingHistory.Columns["SeriNo"].Visible = false;
             dataGridViewShippingHistory.Columns["Silinmis"].Visible = false;
+
+            dataGridViewShippingHistory.Columns["UrunNo"].DisplayIndex = 0;
+            dataGridViewShippingHistory.Columns["KargoNo"].DisplayIndex = 1;
+            dataGridViewShippingHistory.Columns["Gonderici"].DisplayIndex = 2;
+            dataGridViewShippingHistory.Columns["Alici"].DisplayIndex = 3;
+            dataGridViewShippingHistory.Columns["TeslimEdildi"].DisplayIndex = 4;
+
+            dataGridViewShippingHistory.Columns["UrunNo"].HeaderText = "Ürün Seri Numarası";
+            dataGridViewShippingHistory.Columns["KargoNo"].HeaderText = "Kargo Şirketi";
+            dataGridViewShippingHistory.Columns["Gonderici"].HeaderText = "Gönderen";
+            dataGridViewShippingHistory.Columns["Alici"].HeaderText = "Alıcı";
+            dataGridViewShippingHistory.Columns["TeslimEdildi"].HeaderText = "Gönderi Durumu";
+            dataGridViewShippingHistory.Columns["TeslimEdildi"].ReadOnly = true;
+            dataGridViewShippingHistory.RowTemplate.MinimumHeight = 40;
         }
 
         private void GonderilmemisUrunleriComboBoxaBagla()
@@ -134,7 +112,7 @@ namespace KarYonSistemi
         private void KargoSaglayicilariniComboBoxaBagla()
         {
             comboBoxCargoId.DataSource = null;
-            comboBoxCargoId.DataSource = gonderiHizmetSaglayicileri;
+            comboBoxCargoId.DataSource = gonderiYonetimSistemi.gonderiHizmetSaglayicileri;
             comboBoxCargoId.DisplayMember = "Adi";
             comboBoxCargoId.ValueMember = "SeriNo";
 
@@ -149,7 +127,7 @@ namespace KarYonSistemi
             if (dataGridViewShippingHistory.Columns[e.ColumnIndex].Name == "KargoNo" && e.Value is int)
             {
                 int cargoId = (int)e.Value;
-                e.Value = gonderiHizmetSaglayicileri.Find(p => p.SeriNo == cargoId)?.Adi ?? "Bilinmiyor";
+                e.Value = gonderiYonetimSistemi.GonderiHizmetSaglayicisiBul(cargoId)?.Adi ?? "Bilinmiyor";
                 e.FormattingApplied = true;
             }
         }
@@ -174,22 +152,6 @@ namespace KarYonSistemi
             comboBoxProductId.Text = "Ürün seçiniz";
         }
 
-        private GonderiHizmetSaglayicisi GetDeliveryService(int kargoNo)
-        {
-            switch (kargoNo)
-            {
-                case 0:
-                    return ArasKargo.Temsilci;
-                case 1:
-                    return PTTKargo.Temsilci;
-                case 2:
-                    return YurticiKargo.Temsilci;
-                default:
-                    return null;
-            }
-        }
-
-
         private void btnAddToCatalog_Click(object sender, EventArgs e)
         {
             var urunAdi = textBoxProductName.Text;
@@ -200,16 +162,12 @@ namespace KarYonSistemi
             }
             try
             {
-                var urunFiyati = decimal.Parse(fiyati);
-
-                Urun urun = new Urun(
-                    urunler.Count + 1,
-                    urunAdi,
-                    urunFiyati
-                    );
+                decimal urunFiyati = decimal.Parse(fiyati);
+                int urunSeriNo = gonderiYonetimSistemi.urunler.Count + 1;
+                Urun urun = new Urun(urunSeriNo, urunAdi, urunFiyati);
 
                 // Ürünü listeye ekle
-                urunler.Insert(0, urun);
+                gonderiYonetimSistemi.UrunEkle(urun);
 
                 // Grid'i ve ComboBox'u yenile
                 GonderilmemisUrunleriGrideBagla();
@@ -237,13 +195,13 @@ namespace KarYonSistemi
             try
             {
                 var urunNo = Int32.Parse(textBoxProductId.Text);
-                var gonderi = gonderiler.Find(p => p.UrunNo == urunNo);
+                var gonderi = gonderiYonetimSistemi.UrunNumarasiylaGonderiBul(urunNo);
                 if (gonderi == null)
                 {
                     return;
                 }
 
-                var urunAdi = urunler.Find(p => p.SeriNo == gonderi.UrunNo)?.Adi ?? "";
+                var urunAdi = gonderiYonetimSistemi.UrunBul(gonderi.UrunNo)?.Adi ?? "";
                 var teslimatDurumu = gonderi.TeslimEdildi ? "Teslim Edilmiştir." : "Kargoda";
                 label2.Text = string.Join(": ", label2.Text, urunAdi);
                 label3.Text = string.Join(": ", label3.Text, teslimatDurumu);
@@ -258,10 +216,10 @@ namespace KarYonSistemi
 
         private async void button2_Click(object sender, EventArgs e)
         {
-            var gonderiAdi = textBox1.Text;
-            var AliciAdi = textBox2.Text;
-            if (string.IsNullOrEmpty(gonderiAdi) ||
-                string.IsNullOrEmpty(AliciAdi))
+            var gondericiAdi = textBox1.Text;
+            var aliciAdi = textBox2.Text;
+            if (string.IsNullOrEmpty(gondericiAdi) ||
+                string.IsNullOrEmpty(aliciAdi))
             {
                 return;
             }
@@ -276,16 +234,17 @@ namespace KarYonSistemi
                     return;
                 }
 
-                var gonderi = new Gonderi(
-                    id: gonderiler.Count + 1,
-                    kargoNo: secilenKargo.SeriNo,
-                    urunNo: secilenUrun.SeriNo,
-                    gondericiAdi: gonderiAdi,
-                    aliciAdi: AliciAdi
+                int gonderiSeriNo = gonderiYonetimSistemi.gonderiler.Count + 1;
+                Gonderi gonderi = new Gonderi(
+                        gonderiSeriNo,
+                        secilenKargo.SeriNo,
+                        secilenUrun.SeriNo,
+                        gondericiAdi,
+                        aliciAdi
                     );
 
                 //Gonderi listesine ekle
-                gonderiler.Insert(0, gonderi);
+                gonderiYonetimSistemi.GonderiEkle(gonderi);
 
                 // Gönderilmiş ürünü From'dan kaldır
                 GonderilmisUrunuFormdanKaldir();

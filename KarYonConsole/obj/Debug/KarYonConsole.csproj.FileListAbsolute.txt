@@ -1,0 +1,14 @@
+C:\Users\A\source\repos\KarYonSistemi\KarYonConsole\bin\Debug\MainForm.resx
+C:\Users\A\source\repos\KarYonSistemi\KarYonConsole\bin\Debug\MainForm.cs
+C:\Users\A\source\repos\KarYonSistemi\KarYonConsole\bin\Debug\MainForm.Designer.cs
+C:\Users\A\source\repos\KarYonSistemi\KarYonConsole\bin\Debug\KarYonConsole.exe.config
+C:\Users\A\source\repos\KarYonSistemi\KarYonConsole\bin\Debug\KarYonConsole.exe
+C:\Users\A\source\repos\KarYonSistemi\KarYonConsole\bin\Debug\KarYonConsole.pdb
+C:\Users\A\source\repos\KarYonSistemi\KarYonConsole\bin\Debug\KarYonSistemi.exe
+C:\Users\A\source\repos\KarYonSistemi\KarYonConsole\bin\Debug\KarYonSistemi.pdb
+C:\Users\A\source\repos\KarYonSistemi\KarYonConsole\bin\Debug\KarYonSistemi.exe.config
+C:\Users\A\source\repos\KarYonSistemi\KarYonConsole\obj\Debug\KarYonConsole.csproj.AssemblyReference.cache
+C:\Users\A\source\repos\KarYonSistemi\KarYonConsole\obj\Debug\KarYonConsole.csproj.CoreCompileInputs.cache
+C:\Users\A\source\repos\KarYonSistemi\KarYonConsole\obj\Debug\KarYonConsole.csproj.CopyComplete
+C:\Users\A\source\repos\KarYonSistemi\KarYonConsole\obj\Debug\KarYonConsole.exe
+C:\Users\A\source\repos\KarYonSistemi\KarYonConsole\obj\Debug\KarYonConsole.pdb

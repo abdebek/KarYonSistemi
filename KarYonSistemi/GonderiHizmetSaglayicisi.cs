@@ -34,16 +34,21 @@ namespace KarYonSistemi
         /// <param name="gonderiHizmetSaglayicisi">The gonderi hizmet saglayicisi.</param>
         public virtual async Task GonderiSurecleriniYonet(Gonderi gonderi, GonderiHizmetSaglayicisi gonderiHizmetSaglayicisi)
         {
+            Console.WriteLine("\n===========================================");
+            Console.WriteLine($"Gönderi işlemleri başlatılıyor: {gonderi.SeriNo} numaralı gönderi için {gonderiHizmetSaglayicisi.Adi} gönderi hizmet sağlayıcısı kullanılacak.");
             Console.WriteLine($"{gonderiHizmetSaglayicisi.Adi}: Merhaba {gonderi.Alici},  {gonderi.SeriNo} numaralı bir gönderi adresinize teslim edilmek üzere teslim alınmıştır.");
             Console.WriteLine($"Tahmini bekleme süresi: {gonderiHizmetSaglayicisi.TahminiBeklemeSuresi} saniyedir.");
+            Console.WriteLine("===========================================\n");
 
             // Gönderi teslim süresini simüle etmek için
             await Task.Delay(gonderiHizmetSaglayicisi.TahminiBeklemeSuresi); // Bir dakika sonra teslim edildi olarak güncellenmesi için
 
             gonderi.SetDeliveryStatus(true); // Teslim edilmiş diye güncelle
 
+            Console.WriteLine("\n===========================================");
             Console.WriteLine($"Merhaba {gonderi.Gonderici}, {gonderi.SeriNo} numaralı gönderiniz teslim edilmiştir.");
-            Console.WriteLine($"Gönderi hizmetimizle alakalı memnuniyet durumunuzu bizimle paylaşmak isterseniz: {gonderiHizmetSaglayicisi.DahiliTelNo} telefon numaramızı kullanabilirsiniz.");
+            Console.WriteLine($"Gönderi hizmetimizle alakalı memnuniyetinizi bizimle paylaşmak isterseniz: {gonderiHizmetSaglayicisi.DahiliTelNo} telefon numaramızı kullanabilirsiniz.");
+            Console.WriteLine("===========================================\n");
         }
     }
 }
