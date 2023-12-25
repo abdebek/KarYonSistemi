@@ -24,14 +24,14 @@ namespace KarYonSistemi
             GridleriYenile();
 
             // Gönderilmemiş ürünleri ComboBox'a yükler
-            GonderilmemisUrunleriComboBoxaBagla();
+            MevcutUrunleriComboBoxaBagla();
             KargoSaglayicilariniComboBoxaBagla();
         }
 
         private void GridleriYenile()
         {
             GonderileriGrideBagla();
-            GonderilmemisUrunleriGrideBagla();
+            MevcutUrunleriGrideBagla();
         }
 
         private void OrnekGonderileriKargoyaVer()
@@ -50,16 +50,15 @@ namespace KarYonSistemi
         }
 
         // Gönderilmemiş ürünleri getir
-        private List<Urun> GonderilmemisUrunleriGetir()
+        private List<Urun> MevcutUrunleriGetir()
         {
-            return gonderiYonetimSistemi.GonderilmemisUrunleriGetir();
+            return gonderiYonetimSistemi.MevcutUrunleriGetir();
         }
 
-        private void GonderilmemisUrunleriGrideBagla()
+        private void MevcutUrunleriGrideBagla()
         {
-            //dataGridViewProducts.DataSource = null; // Önce temizle 
-            dataGridViewProducts.Visible = false;
-            dataGridViewProducts.DataSource = GonderilmemisUrunleriGetir();
+            dataGridViewProducts.DataSource = null; // Önce temizle 
+            dataGridViewProducts.DataSource = MevcutUrunleriGetir();
             dataGridViewProducts.Columns["SeriNo"].DisplayIndex = 0;
             dataGridViewProducts.Columns["SeriNo"].HeaderText = "Ürün Seri Numarası";
             dataGridViewProducts.Columns["Adi"].DisplayIndex = 1;
@@ -69,13 +68,12 @@ namespace KarYonSistemi
             dataGridViewProducts.Columns["Fiyati"].DisplayIndex = 2;
             dataGridViewProducts.Columns["Silinmis"].Visible = false;
             dataGridViewProducts.RowTemplate.MinimumHeight = 40;
-            dataGridViewProducts.Visible = true;
         }
 
         private void GonderileriGrideBagla()
         {
             dataGridViewShippingHistory.DataSource = null;
-            dataGridViewShippingHistory.CellFormatting += dataGridViewShippingHistory_CellFormatting;
+            dataGridViewShippingHistory.CellFormatting += DataGridViewShippingHistory_CellFormatting;
             dataGridViewShippingHistory.DataSource = gonderiYonetimSistemi.gonderiler;
 
             // Gösterilmemesi gereken sütunları gizle
@@ -97,10 +95,10 @@ namespace KarYonSistemi
             dataGridViewShippingHistory.RowTemplate.MinimumHeight = 40;
         }
 
-        private void GonderilmemisUrunleriComboBoxaBagla()
+        private void MevcutUrunleriComboBoxaBagla()
         {
             comboBoxProductId.DataSource = null;
-            comboBoxProductId.DataSource = GonderilmemisUrunleriGetir();
+            comboBoxProductId.DataSource = MevcutUrunleriGetir();
             comboBoxProductId.DisplayMember = "Adi";
             comboBoxProductId.ValueMember = "SeriNo";
 
@@ -121,7 +119,7 @@ namespace KarYonSistemi
             comboBoxCargoId.Text = "Kargo seçiniz";
         }
 
-        private void dataGridViewShippingHistory_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        private void DataGridViewShippingHistory_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             // KargoNo sütununu ayarla
             if (dataGridViewShippingHistory.Columns[e.ColumnIndex].Name == "KargoNo" && e.Value is int)
@@ -170,8 +168,8 @@ namespace KarYonSistemi
                 gonderiYonetimSistemi.UrunEkle(urun);
 
                 // Grid'i ve ComboBox'u yenile
-                GonderilmemisUrunleriGrideBagla();
-                GonderilmemisUrunleriComboBoxaBagla();
+                MevcutUrunleriGrideBagla();
+                MevcutUrunleriComboBoxaBagla();
 
                 // Formu sıfırla
                 ResetProdcutForm();

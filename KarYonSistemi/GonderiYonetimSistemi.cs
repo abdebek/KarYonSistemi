@@ -75,12 +75,12 @@ namespace KarYonSistemi
         }
 
         // Gönderilmemiş ürünleri getir
-        public List<Urun> GonderilmemisUrunleriGetir()
+        public List<Urun> MevcutUrunleriGetir()
         {
             List<Urun> gonderilmemisUrunler = new List<Urun>();
             foreach (var urun in urunler)
             {
-                if (!gonderiler.Exists(p => p.UrunNo == urun.SeriNo))
+                if (!gonderiler.Exists(p => p.Silinmis || p.UrunNo == urun.SeriNo))
                 {
                     gonderilmemisUrunler.Add(urun);
                 }
