@@ -26,7 +26,6 @@ namespace KarYonSistemi
 
             shipmentInfo.SetDeliveryStatus(true); //
             Console.WriteLine($"Product {shipmentInfo.ProductId} delivered by PTT Kargo.");
-
         }
 
     }
