@@ -42,36 +42,37 @@ namespace KarYonSistemi
         private void LoadSampleData()
         {
             // Load sample products
-            products.Add(new Product { Id = 1, Name = "Bilgisayar", Price = 1000 });
-            products.Add(new Product { Id = 2, Name = "Ayakkabı", Price = 500 });
-            products.Add(new Product { Id = 3, Name = "Tablet", Price = 300 });
-            products.Add(new Product { Id = 4, Name = "Telefon", Price = 200 });
-            products.Add(new Product { Id = 5, Name = "Kulaklık", Price = 100 });
-            products.Add(new Product { Id = 6, Name = "Klavye", Price = 50 });
-            products.Add(new Product { Id = 7, Name = "Mouse", Price = 25 });
-            products.Add(new Product { Id = 8, Name = "Kablo", Price = 10 });
-            products.Add(new Product { Id = 9, Name = "Kalem", Price = 5 });
-            products.Add(new Product { Id = 10, Name = "Silgi", Price = 2 });
-            products.Add(new Product { Id = 11, Name = "Defter", Price = 1 });
-            products.Add(new Product { Id = 12, Name = "Kalemtraş", Price = 0.5m });
-            products.Add(new Product { Id = 13, Name = "Kurşun Kalem", Price = 0.25m });
-            products.Add(new Product { Id = 14, Name = "Kalem Ucu", Price = 0.1m });
-            products.Add(new Product { Id = 15, Name = "Kalem Kutusu", Price = 0.05m });
-            products.Add(new Product { Id = 16, Name = "Kalem Açacağı", Price = 0.025m });
-            products.Add(new Product { Id = 17, Name = "Kalem Silgisi", Price = 0.0125m });
-            products.Add(new Product { Id = 18, Name = "Kalemtraş Silgisi", Price = 0.00625m });
+            products.Add(new Product(1, "Bilgisayar", 1000));
+            products.Add(new Product(2, "Ayakkabı", 500));
+            products.Add(new Product(3, "Tablet", 300));
+            products.Add(new Product(4, "Telefon", 200));
+            products.Add(new Product(5, "Kulaklık", 100));
+            products.Add(new Product(6, "Klavye", 50));
+            products.Add(new Product(7, "Mouse", 25));
+            products.Add(new Product(8, "Kablo", 10));
+            products.Add(new Product(9, "Kalem", 5));
+            products.Add(new Product(10, "Silgi", 2));
+            products.Add(new Product(11, "Defter", 1));
+            products.Add(new Product(12, "Kalemtraş", 0.5m));
+            products.Add(new Product(13, "Kurşun Kalem", 0.25m));
+            products.Add(new Product(14, "Kalem Ucu", 0.1m));
+            products.Add(new Product(15, "Kalem Kutusu", 0.05m));
+            products.Add(new Product(16, "Kalem Açacağı", 0.025m));
+            products.Add(new Product(17, "Kalem Silgisi", 0.0125m));
+            products.Add(new Product(18, "Kalemtraş Silgisi", 0.00625m));
+
 
             // Load sample shipments
-            shipments.Add(new ShipmentInfo { Id = 1, ProductId = 1, CargoId = 3, SenderName = "Ali", ReceiverName = "Ahmet", });
-            shipments.Add(new ShipmentInfo { Id = 2, ProductId = 2, CargoId = 2, SenderName = "Adem", ReceiverName = "Aslan", });
-            shipments.Add(new ShipmentInfo { Id = 3, ProductId = 3, CargoId = 1, SenderName = "Ayşe", ReceiverName = "Aysun", });
-            shipments.Add(new ShipmentInfo { Id = 4, ProductId = 4, CargoId = 3, SenderName = "Bilal", ReceiverName = "Berk", });
-            shipments.Add(new ShipmentInfo { Id = 6, ProductId = 6, CargoId = 1, SenderName = "Cem", ReceiverName = "Ceyda", });
-            shipments.Add(new ShipmentInfo { Id = 7, ProductId = 7, CargoId = 3, SenderName = "Can", ReceiverName = "Cemre", });
-            shipments.Add(new ShipmentInfo { Id = 8, ProductId = 8, CargoId = 2, SenderName = "Derya", ReceiverName = "Deniz", });
-            shipments.Add(new ShipmentInfo { Id = 9, ProductId = 9, CargoId = 1, SenderName = "Dilek", ReceiverName = "Dilan", });
-            shipments.Add(new ShipmentInfo { Id = 10, ProductId = 10, CargoId = 3, SenderName = "Ece", ReceiverName = "Ebru", });
-            shipments.Add(new ShipmentInfo { Id = 11, ProductId = 11, CargoId = 2, SenderName = "Emre", ReceiverName = "Eren", });
+            shipments.Add(new ShipmentInfo(1, 1, 3, "Ali", "Ahmet"));
+            shipments.Add(new ShipmentInfo(2, 2, 2, "Adem", "Aslan"));
+            shipments.Add(new ShipmentInfo(3, 0, 1, "Ayşe", "Aysun"));
+            shipments.Add(new ShipmentInfo(4, 1, 4, "Bilal", "Berk"));
+            shipments.Add(new ShipmentInfo(6, 0, 6, "Cem", "Ceyda"));
+            shipments.Add(new ShipmentInfo(7, 1, 9, "Can", "Cemre"));
+            shipments.Add(new ShipmentInfo(8, 2, 12, "Derya", "Deniz"));
+            shipments.Add(new ShipmentInfo(9, 0, 11, "Dilek", "Dilan"));
+            shipments.Add(new ShipmentInfo(10, 1, 13, "Ece", "Ebru"));
+            shipments.Add(new ShipmentInfo(11, 2, 7, "Emre", "Eren"));
 
             // Set the delivery status for the sample shipments
             foreach (var shipment in shipments)
@@ -228,19 +229,26 @@ namespace KarYonSistemi
                 return;
             }
 
-            var productId = Int32.Parse(textBoxProductId.Text);
-            var shipment = shipments.Find(p => p.ProductId == productId);
-            if (shipment == null)
+            try
             {
-                return;
-            }
+                var productId = Int32.Parse(textBoxProductId.Text);
+                var shipment = shipments.Find(p => p.ProductId == productId);
+                if (shipment == null)
+                {
+                    return;
+                }
 
-            var productName = products.Find(p => p.Id == shipment.ProductId)?.Name ?? "";
-            var deliveryStatus = shipment.IsDelivered ? "Teslim Edilmiştir." : "Kargoda";
-            label2.Text = string.Join(": ", label2.Text, productName);
-            label3.Text = string.Join(": ", label3.Text, deliveryStatus);
-            label4.Text = string.Join(": ", label4.Text, shipment.SenderName);
-            label5.Text = string.Join(": ", label5.Text, shipment.ReceiverName);
+                var productName = products.Find(p => p.Id == shipment.ProductId)?.Name ?? "";
+                var deliveryStatus = shipment.IsDelivered ? "Teslim Edilmiştir." : "Kargoda";
+                label2.Text = string.Join(": ", label2.Text, productName);
+                label3.Text = string.Join(": ", label3.Text, deliveryStatus);
+                label4.Text = string.Join(": ", label4.Text, shipment.SenderName);
+                label5.Text = string.Join(": ", label5.Text, shipment.ReceiverName);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -288,14 +296,13 @@ namespace KarYonSistemi
                     return;
                 }
 
-                var shipment = new ShipmentInfo
-                {
-                    Id = shipments.Count + 1,
-                    ProductId = selectedProduct.Id,
-                    CargoId = selectedCargo.Id,
-                    SenderName = senderName,
-                    ReceiverName = receiverName,
-                };
+                var shipment = new ShipmentInfo(
+                    id: shipments.Count + 1,
+                    cargoId: selectedCargo.Id,
+                    productId: selectedProduct.Id,
+                    senderName: senderName,
+                    receiverName: receiverName
+                    );
 
                 // Update the shipment to the top of the list
                 shipments.Insert(0, shipment);
@@ -414,24 +421,30 @@ namespace KarYonSistemi
             {
                 return;
             }
-            // use try safe parse
-            var productPrice = decimal.Parse(price);
-
-            // Create a new product
-            Product product = new Product
+            try
             {
-                Id = products.Count + 1,
-                Name = productName,
-                Price = productPrice
-            };
+                // use try safe parse
+                var productPrice = decimal.Parse(price);
 
-            // Add product to the top of the list
-            products.Insert(0, product);
+                // Create a new product
+                Product product = new Product(
+                    products.Count + 1,
+                    productName,
+                    productPrice
+                    );
 
-            // Refresh the DataGridView and ComboBox
-            BindProductsDataToGrid();
-            BindProductsToComboBox();
-            ResetProdcutForm();
+                // Add product to the top of the list
+                products.Insert(0, product);
+
+                // Refresh the DataGridView and ComboBox
+                BindProductsDataToGrid();
+                BindProductsToComboBox();
+                ResetProdcutForm();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)

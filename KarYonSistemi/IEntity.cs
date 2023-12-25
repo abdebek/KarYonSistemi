@@ -3,8 +3,8 @@
     // IEntity interface
     public interface IEntity
     {
-        int Id { get; set; }
-        bool IsDeleted { get; set; }
+        int Id { get; }
+        bool IsDeleted { get; }
     }
 
 }

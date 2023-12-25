@@ -10,14 +10,22 @@ namespace KarYonSistemi
         public string SenderName { get; set; }
         public string ReceiverName { get; set; }
 
+        public ShipmentInfo(int id, int cargoId, int productId, string senderName, string receiverName) : base(id)
+        {
+            this.CargoId = cargoId;
+            this.ProductId = productId;
+            this.SenderName = senderName;
+            this.ReceiverName = receiverName;
+        }
+
         public int CargoId
         {
             get { return _cargoId; }
             set
             {
-                if (value < 0)
+                if (value < 0 || value > 2)
                 {
-                    throw new ArgumentOutOfRangeException("CargoId cannot be negative.");
+                    throw new ArgumentOutOfRangeException("KargoId Geçersiz.");
                 }
                 _cargoId = (int)value;
                 _cargoId = value;
