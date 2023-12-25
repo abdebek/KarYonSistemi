@@ -4,19 +4,19 @@ namespace KarYonSistemi
 {
     public class Gonderi : Varlik
     {
-        private int _cargoId;
+        private int _kargoNo;
 
         //KargoNo: Kargo hizmet sağlayıcılarının seri numaralarından biri olmalıdır.
         public int KargoNo
         {
-            get { return _cargoId; }
+            get { return _kargoNo; }
             set
             {
                 if (value < 0 || value > 2)
                 {
-                    throw new ArgumentOutOfRangeException("KargoId Geçersiz.");
+                    throw new ArgumentOutOfRangeException("KargoNo Geçersiz.");
                 }
-                _cargoId = value;
+                _kargoNo = value;
             }
         }
 

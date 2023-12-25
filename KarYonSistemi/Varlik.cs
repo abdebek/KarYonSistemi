@@ -4,23 +4,23 @@ namespace KarYonSistemi
 {
     public abstract class Varlik : IVarlik
     {
-        private int _id;
+        private int _seriNo;
 
-        public bool Silinmis { get; set; } = false;
+        public virtual bool Silinmis { get; set; } = false;
 
         public int SeriNo
         {
-            get { return _id; }
+            get { return _seriNo; }
         }
 
-        public Varlik(int id)
+        public Varlik(int seriNO)
         {
-            if (id < 0)
+            if (seriNO < 0)
             {
                 throw new ArgumentOutOfRangeException("Id sıfırdan küçük olamaz.");
             }
 
-            _id = id;
+            _seriNo = seriNO;
         }
     }
 

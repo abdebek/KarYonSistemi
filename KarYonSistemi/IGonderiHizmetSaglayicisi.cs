@@ -4,7 +4,7 @@ namespace KarYonSistemi
 {
     public interface IGonderiHizmetSaglayicisi
     {
-        Task KargoGonder(Gonderi shipmentInfo);
-        Task GonderiSurecleriniYonet(Gonderi shipmentInfo, GonderiHizmetSaglayicisi deliveryService);
+        Task KargoGonder(Gonderi gonderi);
+        Task GonderiSurecleriniYonet(Gonderi gonderi, GonderiHizmetSaglayicisi gonderiHizmetSaglayicisi);
     }
 }

@@ -51,7 +51,7 @@ namespace KarYonSistemi
 
         public Urun UrunBul(int seriNo)
         {
-            return urunler.FirstOrDefault(u => u.SeriNo == seriNo);
+            return urunler.FirstOrDefault(u => !u.Silinmis && u.SeriNo == seriNo);
         }
 
         public void UrunEkle(Urun urun)
@@ -61,12 +61,12 @@ namespace KarYonSistemi
 
         public Gonderi SeriNumarasiylaGonderiBul(int seriNo)
         {
-            return gonderiler.FirstOrDefault(g => g.SeriNo == seriNo);
+            return gonderiler.FirstOrDefault(g => !g.Silinmis && g.SeriNo == seriNo);
         }
 
         public Gonderi UrunNumarasiylaGonderiBul(int urunNo)
         {
-            return gonderiler.FirstOrDefault(g => g.UrunNo == urunNo);
+            return gonderiler.FirstOrDefault(g => !g.Silinmis && g.UrunNo == urunNo);
         }
 
         public void GonderiEkle(Gonderi gonderi)
@@ -81,7 +81,7 @@ namespace KarYonSistemi
         /// <returns></returns>
         public GonderiHizmetSaglayicisi GonderiHizmetSaglayicisiBul(int seriNo)
         {
-            return gonderiHizmetSaglayicileri.FirstOrDefault(g => g.SeriNo == seriNo);
+            return gonderiHizmetSaglayicileri.FirstOrDefault(g => !g.Silinmis && g.SeriNo == seriNo);
         }
 
         /// <summary>

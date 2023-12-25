@@ -1,21 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="KarYonSistemi.Urun" Collapsed="true">
-    <Position X="15.75" Y="3.5" Width="1.5" />
+    <Position X="17.25" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIAAAAQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Urun.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KarYonSistemi.Program" Collapsed="true">
-    <Position X="15" Y="0.5" Width="1.5" />
+    <Position X="23.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KarYonSistemi.PTTKargo" Collapsed="true">
-    <Position X="8.25" Y="5" Width="1.5" />
+    <Position X="6.5" Y="4.5" Width="2.25" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
       <Compartment Name="Properties" Collapsed="true" />
@@ -25,27 +25,31 @@
       <FileName>PTTKargo.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="KarYonSistemi.YurticiKargo" Collapsed="true">
-    <Position X="13" Y="5" Width="1.5" />
+  <Class Name="KarYonSistemi.YurticiKargo">
+    <Position X="12" Y="4.5" Width="2" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
       <Compartment Name="Properties" Collapsed="true" />
       <Compartment Name="Methods" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AAIAgAAAAJQAIAAAAAQAAAAAAAgAAAAAAAAIAAAAAAg=</HashCode>
+      <HashCode>AAIAiAAAAJQAIAAAAAQAAAAAAAgAAAAAAAAIAAAAAAA=</HashCode>
       <FileName>YurticiKargo.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="KarYonSistemi.MainForm" Collapsed="true">
-    <Position X="12.75" Y="0.5" Width="1.75" />
+  <Class Name="KarYonSistemi.AnaForm">
+    <Position X="20.75" Y="0.5" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>/zgAIAQSADBQQhAAAkSJOEIyAKAvARQgOGFnBUBAADA=</HashCode>
+      <HashCode>/zgAIAQCACBQQBAAAESBOAIyALQvATYgOGBnBQBAADA=</HashCode>
       <FileName>MainForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KarYonSistemi.ArasKargo" Collapsed="true">
-    <Position X="10.5" Y="5" Width="1.5" />
+    <Position X="9.5" Y="4.5" Width="2" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
       <Compartment Name="Properties" Collapsed="true" />
@@ -56,19 +60,19 @@
     </TypeIdentifier>
   </Class>
   <Class Name="KarYonSistemi.Properties.Resources" Collapsed="true">
-    <Position X="15" Y="1.25" Width="1.5" />
+    <Position X="23.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAABAAAABEAAAAQAAAAAAAQAAAAAAAIA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="KarYonSistemi.Properties.Settings" Collapsed="true">
-    <Position X="17.25" Y="0.5" Width="1.5" />
+    <Position X="23.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="KarYonSistemi.Varlik" Collapsed="true">
-    <Position X="16.75" Y="1.75" Width="1.5" />
+  <Class Name="KarYonSistemi.Varlik">
+    <Position X="18.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAACAAAAAAAAAAAAABgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Varlik.cs</FileName>
@@ -76,45 +80,45 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="KarYonSistemi.Gonderi" Collapsed="true">
-    <Position X="18.25" Y="3.5" Width="1.5" />
+    <Position X="19.5" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAGAAAAAAAAAAAgAAIIEAAAAAAAAAAAgAAAAAAAA=</HashCode>
       <FileName>Gonderi.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="KarYonSistemi.GonderiHizmetSaglayicisi" Collapsed="true">
-    <Position X="10.5" Y="2.5" Width="1.5" />
+  <Class Name="KarYonSistemi.GonderiHizmetSaglayicisi">
+    <Position X="9.25" Y="0.75" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAIACAAAABQAAAAAAIQgAAAAAAgAAAAAAAAIAAAAAAA=</HashCode>
       <FileName>GonderiHizmetSaglayicisi.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="KarYonSistemi.TohumVerileri" Collapsed="true">
-    <Position X="10.25" Y="0.5" Width="1.75" />
+  <Class Name="KarYonSistemi.TohumVerileri">
+    <Position X="21" Y="2.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>TohumVerileri.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Interface Name="KarYonSistemi.IVarlik" Collapsed="true">
-    <Position X="7.5" Y="1.5" Width="1.5" />
+  <Interface Name="KarYonSistemi.IVarlik">
+    <Position X="15.5" Y="2.25" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAACAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IVarlik.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="KarYonSistemi.IGonderiHizmetSaglayicisi" Collapsed="true">
-    <Position X="7.5" Y="0.5" Width="1.5" />
+  <Interface Name="KarYonSistemi.IGonderiHizmetSaglayicisi">
+    <Position X="15.5" Y="0.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAIQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IGonderiHizmetSaglayicisi.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="KarYonSistemi.IGonderiBilgi" Collapsed="true">
-    <Position X="7.5" Y="2.75" Width="1.5" />
+  <Interface Name="KarYonSistemi.IGonderiBilgi">
+    <Position X="12.5" Y="0.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAIAAAAAAA=</HashCode>
+      <HashCode>AAAAACAAAAAAAAAAAAAAACAEAAAAQAAAAAAgABAAACA=</HashCode>
       <FileName>IGonderiBilgi.cs</FileName>
       <NewMemberFileName>IKargo.cs</NewMemberFileName>
     </TypeIdentifier>
