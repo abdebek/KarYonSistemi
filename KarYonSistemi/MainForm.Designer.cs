@@ -37,6 +37,7 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label19 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -75,7 +76,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.textBoxProductName = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -195,9 +195,19 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(850, 197);
+            this.panel1.Size = new System.Drawing.Size(859, 215);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(10, 48);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(224, 25);
+            this.label19.TabIndex = 8;
+            this.label19.Text = "Ürün Seri Numarası:";
+            this.label19.Click += new System.EventHandler(this.label19_Click);
             // 
             // panel2
             // 
@@ -460,9 +470,10 @@
             this.label6.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label6.Location = new System.Drawing.Point(13, 10);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(201, 25);
+            this.label6.Size = new System.Drawing.Size(230, 25);
             this.label6.TabIndex = 1;
-            this.label6.Text = "Bir Ürün Gönderin";
+            this.label6.Text = "Bir  Gönderi Başlatın";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // panel6
             // 
@@ -582,16 +593,6 @@
             this.label8.Size = new System.Drawing.Size(201, 25);
             this.label8.TabIndex = 1;
             this.label8.Text = "Yeni Ürün Ekleyin";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(10, 48);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(224, 25);
-            this.label19.TabIndex = 8;
-            this.label19.Text = "Ürün Seri Numarası:";
-            this.label19.Click += new System.EventHandler(this.label19_Click);
             // 
             // MainForm
             // 

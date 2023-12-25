@@ -2,6 +2,7 @@
 using System;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Threading.Tasks;
 
 namespace KarYonSistemi
 {
@@ -10,8 +11,8 @@ namespace KarYonSistemi
         private List<Product> products = new List<Product>();
         private List<ShipmentInfo> shipments = new List<ShipmentInfo>();
         private List<DeliveryService> deliveryServices = new List<DeliveryService> {
-            PTTKargo.Instance,
             ArasKargo.Instance,
+            PTTKargo.Instance,
             YurticiKargo.Instance
         };
 
@@ -39,7 +40,7 @@ namespace KarYonSistemi
             BindCargosToComboBox();
         }
 
-        private void LoadSampleData()
+        private async void LoadSampleData()
         {
             // Load sample products
             products.Add(new Product(1, "Bilgisayar", 1000));
@@ -74,11 +75,19 @@ namespace KarYonSistemi
             shipments.Add(new ShipmentInfo(10, 1, 13, "Ece", "Ebru"));
             shipments.Add(new ShipmentInfo(11, 2, 7, "Emre", "Eren"));
 
-            // Set the delivery status for the sample shipments
+            // Set the delivery status for the sample shipments, use parallel foreach
             foreach (var shipment in shipments)
             {
-                shipment.SetDeliveryStatus(true);
-            }
+                SendCargo(shipment);
+            };
+        }
+
+        private async void SendCargo(ShipmentInfo shipment)
+        {
+            var deliveryService = GetDeliveryService(shipment.CargoId);
+            await deliveryService.SendCargo(shipment);
+
+            BindShipmentsDataToGrid();
         }
 
         // Get products that has not been shipped yet
@@ -200,12 +209,14 @@ namespace KarYonSistemi
         {
             switch (cargoId)
             {
-                case 2:
+                case 0:
                     return ArasKargo.Instance;
-                case 3:
+                case 1:
+                    return PTTKargo.Instance;
+                case 2:
                     return YurticiKargo.Instance;
                 default:
-                    return PTTKargo.Instance;
+                    return null;
             }
         }
 
