@@ -3,27 +3,26 @@ using System.Threading.Tasks;
 
 namespace KarYonSistemi
 {
-    // PTTKargo class inheriting from DeliveryService
-    public sealed class PTTKargo : DeliveryService
+    public sealed class PTTKargo : GonderiHizmetSaglayicisi
     {
-        // Singleton instance
-        private static readonly PTTKargo instance = new PTTKargo();
+        private static readonly PTTKargo temsilci = new PTTKargo();
         private int _tahminiBeklemeSuresi = 5000;
-        public override int Id { get; set; } = 1;
-        public override string Name { get; set; } = "PTT Kargo";
-        protected override string dahiliTelNo => "444 10 01";
-        protected override int TahminiBeklemeSuresi { get => _tahminiBeklemeSuresi; }
-        public override string PhoneNumber { get; set; } = "444 17 88";
-        public override string Address { get; set; } = "Ankara";
 
         private PTTKargo() { }
-        public static PTTKargo Instance => instance;
 
+        protected override string DahiliTelNo => "444 10 01";
+        protected override int TahminiBeklemeSuresi { get => _tahminiBeklemeSuresi; }
 
-        // Override the abstract method to implement specific behavior for PTT Kargo
-        public override async Task SendCargo(ShipmentInfo shipmentInfo)
+        public override int SeriNo { get; set; } = 1;
+        public override string Adi { get; set; } = "PTT Kargo";
+        public override string TelNumarasi { get; set; } = "444 17 88";
+        public override string Adres { get; set; } = "Sakarya";
+
+        public static PTTKargo Temsilci => temsilci;
+
+        public override async Task KargoGonder(Gonderi gonderi)
         {
-            await ProcessDelivery(shipmentInfo, instance);
+            await GonderiSurecleriniYonet(gonderi, temsilci);
         }
 
     }

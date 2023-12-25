@@ -61,11 +61,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArasKargo.cs" />
-    <Compile Include="ICargo.cs" />
-    <Compile Include="DeliveryService.cs" />
-    <Compile Include="Entity.cs" />
-    <Compile Include="IDeliveryService.cs" />
-    <Compile Include="IEntity.cs" />
+    <Compile Include="IKargo.cs" />
+    <Compile Include="GonderiHizmetSaglayicisi.cs" />
+    <Compile Include="TohumVerileri.cs" />
+    <Compile Include="Varlik.cs" />
+    <Compile Include="IGonderiHizmetSaglayicisi.cs" />
+    <Compile Include="IVarlik.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -74,11 +75,11 @@
       <DependentUpon>MainForm.cs</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="Product.cs" />
+    <Compile Include="Urun.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PTTKargo.cs" />
-    <Compile Include="ShipmentInfo.cs" />
+    <Compile Include="Gonderi.cs" />
     <Compile Include="YurticiKargo.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

@@ -2,17 +2,18 @@
 
 namespace KarYonSistemi
 {
-    // Abstract class Entity implementing IEntity
-    public abstract class Entity : IEntity
+    public abstract class Varlik : IVarlik
     {
         private int _id;
-        public bool IsDeleted { get; set; } = false;
-        public int Id
+
+        public bool Silinmis { get; set; } = false;
+
+        public int SeriNo
         {
             get { return _id; }
         }
 
-        public Entity(int id)
+        public Varlik(int id)
         {
             if (id < 0)
             {

@@ -1,34 +1,39 @@
-﻿using System;
-using System.Threading.Tasks;
-
+﻿using System.Threading.Tasks;
 
 namespace KarYonSistemi
 {
-    // ArasKargo class inheriting from DeliveryService
-    public sealed class ArasKargo : DeliveryService
+    /// <summary>
+    /// sealed sınıf: GonderiHizmetSaglayicisi GonderiHizmetSaglayicisi sınıftan kalıtım alır
+    /// Dolayısıyla, IGonderiHizmetSaglayicisi, ICargo and IEntity interface'lerini de uygulamış (implement etmiş) olur.
+    /// </summary>
+    public sealed class ArasKargo : GonderiHizmetSaglayicisi
     {
-        // Singleton instance
-        private static readonly ArasKargo instance = new ArasKargo();
-        private int _tahminiBeklemeSuresi = 60000;
-        public override int Id { get; set; } = 0;
-        public override string Name { get; set; } = "Aras Kargo";
-        protected override string dahiliTelNo => "444 10 00";
+        // Tekil örnek veya temsilci
+        private static readonly ArasKargo temsilci = new ArasKargo();
+
+        // Dışarıdan ArasKargo nesnesinin türetilmesini Örneklemey önlemek için private kurucu kullanılmıştır
+        private ArasKargo() { }
+
+        // Ebeyn sınıftaki protected abstract olduğu için override edilmek zorunda
+        protected override string DahiliTelNo => "444 10 00";
+
         // TahminiBeklemeSuresi override edilmediği için ebeveyn sınıftaki değer kullanılacak
-        public override string PhoneNumber { get; set; } = "444 25 52";
-        public override string Address { get; set; } = "İstanbul";
+        public override int SeriNo { get; set; } = 0;
+        public override string Adi { get; set; } = "Aras Kargo";
+        public override string TelNumarasi { get; set; } = "444 25 52";
+        public override string Adres { get; set; } = "Adana";
 
-        // Private constructor to prevent instantiation
-        private ArasKargo()
+
+        public static ArasKargo Temsilci => temsilci;
+
+        /// <summary>
+        /// Gönderi işlemlerini başlatır.
+        /// Ana sınıftaki soyut metodu override eder (ezer).
+        /// </summary>
+        /// <param name="gonderi">gönderi</param>
+        public override async Task KargoGonder(Gonderi gonderi)
         {
-        }
-
-        // Public property to access the singleton instance
-        public static ArasKargo Instance => instance;
-
-        // Override the abstract method to implement specific behavior for Aras Kargo
-        public override async Task SendCargo(ShipmentInfo shipmentInfo)
-        {
-            await ProcessDelivery(shipmentInfo, instance);
+            await GonderiSurecleriniYonet(gonderi, temsilci);
         }
 
     }
