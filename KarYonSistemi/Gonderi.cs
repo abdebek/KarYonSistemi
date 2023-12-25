@@ -21,6 +21,7 @@ namespace KarYonSistemi
             this.Alici = aliciAdi;
         }
 
+        //KargoNo: Kargo hizmet sağlayıcılarının seri numaralarından biri olmalıdır.
         public int KargoNo
         {
             get { return _cargoId; }

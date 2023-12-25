@@ -9,7 +9,7 @@ namespace KarYonSistemi
     {
         private List<Urun> urunler = new List<Urun>();
         private List<Gonderi> gonderiler = new List<Gonderi>();
-        private List<GonderiHizmetSaglayicisi> gonderiHizmetSaglayicisi = new List<GonderiHizmetSaglayicisi> {
+        private List<GonderiHizmetSaglayicisi> gonderiHizmetSaglayicileri = new List<GonderiHizmetSaglayicisi> {
             ArasKargo.Temsilci,
             PTTKargo.Temsilci,
             YurticiKargo.Temsilci
@@ -37,6 +37,12 @@ namespace KarYonSistemi
             // Gönderilmemiş ürünleri ComboBox'a yükler
             GonderilmemisUrunleriComboBoxaBagla();
             KargoSaglayicilariniComboBoxaBagla();
+        }
+
+        private void GridleriYenile()
+        {
+            GonderileriGrideBagla();
+            GonderilmemisUrunleriGrideBagla();
         }
 
         private async void OrnekVerileriYukle()
@@ -77,8 +83,7 @@ namespace KarYonSistemi
 
         private void GonderilmemisUrunleriGrideBagla()
         {
-            // Manually set the display index for each column
-            dataGridViewProducts.DataSource = null; // Reset 
+            dataGridViewProducts.DataSource = null; // Önce temizle 
             dataGridViewProducts.DataSource = GonderilmemisUrunleriGetir();
             dataGridViewProducts.Columns["SeriNo"].DisplayIndex = 0;
             dataGridViewProducts.Columns["SeriNo"].HeaderText = "Ürün Seri Numarası";
@@ -109,12 +114,11 @@ namespace KarYonSistemi
             dataGridViewShippingHistory.Columns["TeslimEdildi"].ReadOnly = true;
             dataGridViewShippingHistory.RowTemplate.MinimumHeight = 40;
 
-            // Hide unwanted columns
+            // Gösterilmemesi gereken sütunları gizle
             dataGridViewShippingHistory.Columns["SeriNo"].Visible = false;
             dataGridViewShippingHistory.Columns["Silinmis"].Visible = false;
         }
 
-        // Bind products to ComboBox
         private void GonderilmemisUrunleriComboBoxaBagla()
         {
             comboBoxProductId.DataSource = null;
@@ -122,38 +126,33 @@ namespace KarYonSistemi
             comboBoxProductId.DisplayMember = "Adi";
             comboBoxProductId.ValueMember = "SeriNo";
 
-            // Set the default selected item to none
+            // Seçili ürünü sıfırla
             comboBoxProductId.SelectedIndex = -1;
             comboBoxProductId.Text = "Ürün seçiniz";
         }
 
-        // Bind cargos to ComboBox
         private void KargoSaglayicilariniComboBoxaBagla()
         {
             comboBoxCargoId.DataSource = null;
-            comboBoxCargoId.DataSource = gonderiHizmetSaglayicisi;
+            comboBoxCargoId.DataSource = gonderiHizmetSaglayicileri;
             comboBoxCargoId.DisplayMember = "Adi";
             comboBoxCargoId.ValueMember = "SeriNo";
 
-            // Set the default selected item to none
+            // Seçili ürünü sıfırla
             comboBoxCargoId.SelectedIndex = -1;
             comboBoxCargoId.Text = "Kargo seçiniz";
         }
 
         private void dataGridViewShippingHistory_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            // cargoId column formatting
+            // KargoNo sütununu ayarla
             if (dataGridViewShippingHistory.Columns[e.ColumnIndex].Name == "KargoNo" && e.Value is int)
             {
                 int cargoId = (int)e.Value;
-                e.Value = gonderiHizmetSaglayicisi.Find(p => p.SeriNo == cargoId)?.Adi ?? "Bilinmiyor";
-                e.FormattingApplied = true; // Indicate that the formatting is applied
+                e.Value = gonderiHizmetSaglayicileri.Find(p => p.SeriNo == cargoId)?.Adi ?? "Bilinmiyor";
+                e.FormattingApplied = true;
             }
-
-            // productId column formatting
-
         }
-
 
         private void ResetDeliveryStatusBoard()
         {
@@ -291,17 +290,11 @@ namespace KarYonSistemi
                 // Gönderilmiş ürünü From'dan kaldır
                 GonderilmisUrunuFormdanKaldir();
 
-                // Refresh the DataGridView and Products ComboBox
-                GonderileriGrideBagla();
-                GonderilmemisUrunleriGrideBagla();
+                // Gridleri yenile
+                GridleriYenile();
 
-                // Send the cargo
-                secilenGonderiHizmetSaglayicisi = GetDeliveryService(secilenKargo.SeriNo);
-                await secilenGonderiHizmetSaglayicisi.KargoGonder(gonderi);
-
-                // Refresh the DataGridView and Products ComboBox again
-                GonderileriGrideBagla();
-                GonderilmemisUrunleriGrideBagla();
+                // Kargoya ver
+                KargoyaVer(gonderi);
             }
             catch (Exception ex)
             {
