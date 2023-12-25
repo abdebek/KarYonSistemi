@@ -1,22 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="KarYonSistemi.DeliveryService" Collapsed="true">
-    <Position X="3" Y="3.75" Width="1.5" />
+  <Class Name="KarYonSistemi.DeliveryService">
+    <Position X="3" Y="1.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAAAAQQAQAAAAAAAACAAAAAQAAAAA=</HashCode>
+      <HashCode>AAACAAAAAAQAAAAQAAAQQAQAAAAAAAACAAAAAQAACAA=</HashCode>
       <FileName>DeliveryService.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="KarYonSistemi.Entity" Collapsed="true">
-    <Position X="8.75" Y="3.75" Width="1.5" />
+  <Class Name="KarYonSistemi.Entity">
+    <Position X="8.5" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
       <FileName>Entity.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="KarYonSistemi.Product" Collapsed="true">
+  <Class Name="KarYonSistemi.Product">
     <Position X="7.5" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgAAAAAAAQAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
@@ -30,21 +33,21 @@
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="KarYonSistemi.PTTKargo" Collapsed="true">
+  <Class Name="KarYonSistemi.PTTKargo">
     <Position X="0.75" Y="5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAAAAQQAQAAABAAAACQAAAAAAAAAA=</HashCode>
+      <HashCode>AAACAAAAAAQAIAAQAAAQQAQAAABAAAACQAAAAAAAAAA=</HashCode>
       <FileName>PTTKargo.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="KarYonSistemi.YurticiKargo" Collapsed="true">
+  <Class Name="KarYonSistemi.YurticiKargo">
     <Position X="5.25" Y="5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAAAAQQAQAAABAAAACQAAAAAAAAAA=</HashCode>
+      <HashCode>AAACAAAAAAQAIAAQAAAQQAQAAABAAAACQAAAAAAAAAA=</HashCode>
       <FileName>YurticiKargo.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="KarYonSistemi.ShipmentInfo" Collapsed="true">
+  <Class Name="KarYonSistemi.ShipmentInfo">
     <Position X="9.75" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EAAAAEAAAAACAAAQAAAAEAEAAAAAAAAAAAAAAAAgAAA=</HashCode>
@@ -58,10 +61,10 @@
       <FileName>MainForm.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="KarYonSistemi.ArasKargo" Collapsed="true">
+  <Class Name="KarYonSistemi.ArasKargo">
     <Position X="3" Y="5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAAAAQQAQAAABAAAACQAAAAAAAAAA=</HashCode>
+      <HashCode>AAACAAAAAAAAIAAQAAAQQAQAAABAAAACQAAAAAAAAAA=</HashCode>
       <FileName>ArasKargo.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -80,7 +83,7 @@
   <Interface Name="KarYonSistemi.IDeliveryService" Collapsed="true">
     <Position X="2.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
       <FileName>IDeliveryService.cs</FileName>
     </TypeIdentifier>
   </Interface>

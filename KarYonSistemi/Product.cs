@@ -3,7 +3,9 @@
     // Product class inheriting from Entity
     public class Product : Entity
     {
-        private int _price;
+        // para miktarı için decimal tipi tercih edilir.
+        // https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/floating-point-numeric-types#characteristics-of-the-floating-point-types
+        private decimal _price;
         public string Name { get; set; }
         public decimal Price
         {
@@ -20,7 +22,7 @@
                     throw new System.ArgumentOutOfRangeException("Price cannot be negative.");
                 }
 
-                _price = (int)value;
+                _price = value;
             }
         }
 
