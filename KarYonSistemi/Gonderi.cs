@@ -4,10 +4,10 @@ namespace KarYonSistemi
 {
     public class Gonderi : Varlik
     {
-        private int _kargoNo;
+        private short _kargoNo;
 
         //KargoNo: Kargo hizmet sağlayıcılarının seri numaralarından biri olmalıdır.
-        public int KargoNo
+        public short KargoNo
         {
             get { return _kargoNo; }
             set
@@ -29,7 +29,7 @@ namespace KarYonSistemi
 
         public Gonderi(int id, int kargoNo, int urunNo, string gondericiAdi, string aliciAdi) : base(id)
         {
-            this.KargoNo = kargoNo;
+            this.KargoNo = (short)kargoNo;
             this.UrunNo = urunNo;
             this.Gonderici = gondericiAdi;
             this.Alici = aliciAdi;

@@ -11,16 +11,20 @@ namespace KarYonSistemi
         public int SeriNo
         {
             get { return _seriNo; }
+
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException("Id sıfırdan küçük olamaz.");
+                }
+                _seriNo = value;
+            }
         }
 
         public Varlik(int seriNO)
         {
-            if (seriNO < 0)
-            {
-                throw new ArgumentOutOfRangeException("Id sıfırdan küçük olamaz.");
-            }
-
-            _seriNo = seriNO;
+            this.SeriNo = seriNO;
         }
     }
 

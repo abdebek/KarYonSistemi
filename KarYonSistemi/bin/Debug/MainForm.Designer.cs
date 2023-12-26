@@ -1,6 +1,6 @@
 ﻿namespace KarYonSistemi
 {
-    partial class AnaForm
+    sealed partial class AnaForm
     {
         /// <summary>
         /// Required designer variable.

@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace KarYonSistemi
 {
-    public class GonderiYonetimSistemi : IGonderiBilgi
+    sealed public class GonderiYonetimSistemi : IGonderiBilgi
     {
         // Singleton: Tekil nesne
         private static GonderiYonetimSistemi temsilci;

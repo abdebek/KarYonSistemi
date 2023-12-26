@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="KarYonSistemi.Urun" Collapsed="true">
+  <Class Name="KarYonSistemi.Urun">
     <Position X="17.25" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIAAAAQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Urun.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="KarYonSistemi.Program" Collapsed="true">
-    <Position X="23.25" Y="1.5" Width="1.5" />
+  <Class Name="KarYonSistemi.Program">
+    <Position X="23.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
@@ -17,12 +17,12 @@
   <Class Name="KarYonSistemi.PTTKargo">
     <Position X="6.5" Y="4.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAIAiAAAAJQAIAAAAAQAAAAAAAgAAAAAAAAIAAAAAAA=</HashCode>
+      <HashCode>AAIAiAAAAJQAIAAAAIQAAAAAAAgAAAAAAAAIAAAAAAA=</HashCode>
       <FileName>PTTKargo.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KarYonSistemi.YurticiKargo">
-    <Position X="12" Y="4.5" Width="2" />
+    <Position X="12" Y="4.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAIAiAAAAJQAIAAAAAQAAAAAAAgAAAAAAAAIAAAAAAA=</HashCode>
       <FileName>YurticiKargo.cs</FileName>
@@ -47,13 +47,13 @@
     </TypeIdentifier>
   </Class>
   <Class Name="KarYonSistemi.Properties.Resources" Collapsed="true">
-    <Position X="23.25" Y="2.5" Width="1.5" />
+    <Position X="23.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAABAAAABEAAAAQAAAAAAAQAAAAAAAIA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="KarYonSistemi.Properties.Settings" Collapsed="true">
-    <Position X="23.25" Y="0.5" Width="1.5" />
+    <Position X="23.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
@@ -66,7 +66,7 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="KarYonSistemi.Gonderi" Collapsed="true">
+  <Class Name="KarYonSistemi.Gonderi">
     <Position X="19.5" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAACAAAAAAAAAAAgAAIIEAAAAAAAAQAAgAAAAAAAA=</HashCode>
@@ -82,28 +82,36 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="KarYonSistemi.TohumVerileri">
-    <Position X="21" Y="2.25" Width="1.75" />
+    <Position X="20.75" Y="2" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>TohumVerileri.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="KarYonSistemi.GonderiYonetimSistemi">
+    <Position X="21.5" Y="3.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAgCAQAIAAAAAAAgAIACAEAAEAQAAAAAAgAFAAACA=</HashCode>
+      <FileName>GonderiYonetimSistemi.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
   <Interface Name="KarYonSistemi.IVarlik">
-    <Position X="15.5" Y="2.25" Width="2.25" />
+    <Position X="14.5" Y="5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAACAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IVarlik.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="KarYonSistemi.IGonderiHizmetSaglayicisi">
-    <Position X="15.5" Y="0.5" Width="2.25" />
+    <Position X="14.5" Y="3.25" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAIQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IGonderiHizmetSaglayicisi.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="KarYonSistemi.IGonderiBilgi">
-    <Position X="12.5" Y="0.5" Width="2.25" />
+    <Position X="14.5" Y="0.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAACAAAAAAAAAAAAAAACAEAAAAQAAAAAAgABAAACA=</HashCode>
       <FileName>IGonderiBilgi.cs</FileName>
