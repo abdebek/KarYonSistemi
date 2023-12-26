@@ -3,7 +3,7 @@
 namespace KarYonSistemi
 {
     /// <summary>
-    /// sealed sınıf: GonderiHizmetSaglayicisi IGonderiHizmetSaglayicisi sınıftan kalıtım alır
+    /// ealed sınıf: GonderiHizmetSaglayicisi IGonderiHizmetSaglayicisi sınıftan kalıtım alır
     /// Dolayısıyla, IGonderiHizmetSaglayicisi, IKargo and IVarlık interface'lerini de uygulamış (implement etmiş) olur.
     /// </summary>
     public sealed class ArasKargo : GonderiHizmetSaglayicisi
