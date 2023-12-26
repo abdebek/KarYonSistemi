@@ -23,7 +23,6 @@ namespace KarYonSistemi
         public override string TelNumarasi { get; set; } = "444 25 52";
         public override string Adres { get; set; } = "Adana";
 
-
         public static ArasKargo Temsilci => temsilci;
 
         /// <summary>
