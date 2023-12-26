@@ -5,6 +5,10 @@ using System.Drawing;
 
 namespace KarYonSistemi
 {
+    /// <summary>
+    /// KarYönSistemi: Kargo Yönetim Sistemi uygaması için ana form (ekran).
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.Form" />
     internal partial class AnaForm : Form
     {
         private GonderiYonetimSistemi gonderiYonetimSistemi = GonderiYonetimSistemi.Temsilci;

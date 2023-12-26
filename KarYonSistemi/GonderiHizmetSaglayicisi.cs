@@ -3,17 +3,18 @@ using System.Threading.Tasks;
 
 namespace KarYonSistemi
 {
-    // Abstract sınıf: IGonderiHizmetSaglayicisi, ICargo and IEntity interface'lerini uygular (kalıtım alır.).
+    // Abstract sınıf: IGonderiHizmetSaglayicisi, IKargo and IVarlık interface'lerini uygular (kalıtım alır.).
     public abstract class GonderiHizmetSaglayicisi : IGonderiHizmetSaglayicisi, IKargo
     {
         // Abstract özellikler: kalıtım alan sınıflar tarafından override edilmek zorunda
         protected abstract string DahiliTelNo { get; }
         public abstract string TelNumarasi { get; set; }
         public abstract string Adres { get; set; }
+        public abstract int SeriNo { get; }
+        public abstract string Adi { get; set; }
 
         // Virtual özellikler: kalıtım alan sınıflar tarafından override edilebilir
-        public virtual int SeriNo { get; set; }
-        public virtual string Adi { get; set; }
+
         protected virtual int TahminiBeklemeSuresi { get; } = 60000; // 30 saniye
         public virtual bool Silinmis { get; set; }
 

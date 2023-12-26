@@ -85,7 +85,7 @@ namespace KarYonSistemi
         }
 
         /// <summary>
-        /// Mevcuts (Gönderilmemiş) the urunleri getir.
+        /// Mevcut (Gönderilmemiş) urunleri getir.
         /// </summary>
         /// <returns></returns>
         public List<Urun> MevcutUrunleriGetir()

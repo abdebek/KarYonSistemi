@@ -13,7 +13,7 @@ namespace KarYonSistemi
         protected override string DahiliTelNo => "444 10 01";
         protected override int TahminiBeklemeSuresi { get => _tahminiBeklemeSuresi; }
 
-        public override int SeriNo { get; set; } = 1;
+        public override int SeriNo { get; } = 1;
         public override string Adi { get; set; } = "PTT Kargo";
         public override string TelNumarasi { get; set; } = "444 17 88";
         public override string Adres { get; set; } = "Sakarya";

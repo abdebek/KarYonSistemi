@@ -3,8 +3,8 @@
 namespace KarYonSistemi
 {
     /// <summary>
-    /// sealed sınıf: GonderiHizmetSaglayicisi GonderiHizmetSaglayicisi sınıftan kalıtım alır
-    /// Dolayısıyla, IGonderiHizmetSaglayicisi, ICargo and IEntity interface'lerini de uygulamış (implement etmiş) olur.
+    /// sealed sınıf: GonderiHizmetSaglayicisi IGonderiHizmetSaglayicisi sınıftan kalıtım alır
+    /// Dolayısıyla, IGonderiHizmetSaglayicisi, IKargo and IVarlık interface'lerini de uygulamış (implement etmiş) olur.
     /// </summary>
     public sealed class ArasKargo : GonderiHizmetSaglayicisi
     {
@@ -18,7 +18,7 @@ namespace KarYonSistemi
         protected override string DahiliTelNo => "444 10 00";
 
         // TahminiBeklemeSuresi override edilmediği için ebeveyn sınıftaki değer kullanılacak
-        public override int SeriNo { get; set; } = 0;
+        public override int SeriNo { get; } = 0;
         public override string Adi { get; set; } = "Aras Kargo";
         public override string TelNumarasi { get; set; } = "444 25 52";
         public override string Adres { get; set; } = "Adana";

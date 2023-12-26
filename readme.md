@@ -1,7 +1,21 @@
 # KarYönSistemi: Kargo Yönetim Sistemi
 
-> Dunyanın en gelişmiş Kargo Gönderi ve Teslimat Yönetim Sisteminin adıdır, KarYönSistemi.
+Bir kargo/gönderi yönetim sistemi oluşturulması istenmektedir. BUygulamanın aşağıdaki
+özellikleri içermesi gerekmektedir:
 
-Kargolarınızın gönderi ve teslimati ile alakalı tüm adımları takip etmek artık çok kolay: yapmanız gereken tek şey, en gelişmiş kargo yönetim sistemi olan KarYonSistemi uygulamasını indirip kendi bilgisayarınızda kurulumunu yapmaktır.
+GonderiYonetimSistemi
+
+- **Ivarlık:** SeriNo (Seri Numarası) ve Silinmis (Silinmiş mi) gibi özellikleri tanımalar.
+- **IKargo:** Ivarlık sınıfından kalıtım almalı ve Adi, TelNumarasi ve Adres gibi fazla özellikleri tanımalamalı.
+- IGonderiHizmetSaglayicisi: KargoGonder ve GonderiSurecleriniYonet gibi metotları tanımlar.
+
+sealed sınıf: GonderiHizmetSaglayicisi GonderiHizmetSaglayicisi sınıftan kalıtım alır
+/// Dolayısıyla, IGonderiHizmetSaglayicisi, IKargo and IVarlık interface'lerini de uygulamış (implement etmiş) olur.
+
+ArasKargo : GonderiHizmetSaglayicisi
+
+PTTKargo : GonderiHizmetSaglayicisi
+
+YurticiKargo : GonderiHizmetSaglayicisi
 
 Icon: `[Truck icons created by DinosoftLabs - Flaticon](`https://www.flaticon.com/free-icons/truck `)`
