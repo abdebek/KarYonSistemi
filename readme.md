@@ -1,6 +1,6 @@
 # KarYönSistemi: Kargo Yönetim Sistemi
 
-Bir kargo/gönderi yönetim sistemi oluşturulması istenmektedir. BUygulamanın aşağıdaki
+Bir kargo/gönderi yönetim sistemi oluşturulması istenmektedir. Uygulamanın aşağıdaki
 özellikleri içermesi gerekmektedir:
 
 - **Ivarlık:** SeriNo (Seri Numarası) ve Silinmis (Silinmiş mi) gibi özellikleri tanımalar.
