@@ -20,6 +20,18 @@ namespace KarYonSistemi
 
         public static PTTKargo Temsilci => temsilci;
 
+        // Call POST: https://www.ptt.gov.tr/api/kargogonder
+        private async Task GonderiBilgileriniPTTKargoSistemineGonder(Gonderi gonderi)
+        {
+            Console.WriteLine("PTT Kargo: Gönderi bilgileri PTT Kargo sistemine gönderiliyor...");
+            Console.WriteLine("Call POST: https://www.ptt.gov.tr/api/kargogonder");
+
+            // Gönderi teslim süresini simüle etmek için
+            await Task.Delay(TahminiBeklemeSuresi); // Bir dakika sonra teslim edildi olarak güncellenmesi için
+
+            gonderi.SetDeliveryStatus(true); // Teslim edilmiş diye güncelle
+        }
+
         public override async Task KargoGonder(Gonderi gonderi)
         {
             await GonderiSurecleriniYonet(gonderi, temsilci);
@@ -33,10 +45,7 @@ namespace KarYonSistemi
             Console.WriteLine($"Tahmini bekleme süresi: {TahminiBeklemeSuresi} saniyedir.");
             Console.WriteLine("===========================================\n");
 
-            // Gönderi teslim süresini simüle etmek için
-            await Task.Delay(TahminiBeklemeSuresi); // Bir dakika sonra teslim edildi olarak güncellenmesi için
-
-            gonderi.SetDeliveryStatus(true); // Teslim edilmiş diye güncelle
+            await GonderiBilgileriniPTTKargoSistemineGonder(gonderi);
 
             Console.WriteLine("\n===========================================");
             Console.WriteLine($"Merhaba {gonderi.Gonderici}, {SeriNo} numaralı gönderiniz teslim edilmiştir.");
