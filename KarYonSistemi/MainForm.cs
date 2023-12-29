@@ -253,6 +253,7 @@ namespace KarYonSistemi
 
                 // Gridleri yenile
                 GridleriYenile();
+                MevcutUrunleriComboBoxaBagla();
 
                 // Kargoya ver
                 KargoyaVer(gonderi);
