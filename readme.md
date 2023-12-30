@@ -21,6 +21,6 @@
 
 ### Sınıf Şekli (Class Diagram):
 
-![Classs Diagram](KarYonSistemi\Assets\ClassDiagrams.png "Classs Diagram")
+![Classs Diagram](KarYonSistemi/Assets/ClassDiagrams.png "Classs Diagram")
 
 Uygulamada Kullanılmış Icon şu adresten alınmıştır: `[Truck icons created by DinosoftLabs - Flaticon](`https://www.flaticon.com/free-icons/truck `)`
