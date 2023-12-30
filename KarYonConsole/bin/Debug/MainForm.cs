@@ -5,11 +5,7 @@ using System.Drawing;
 
 namespace KarYonSistemi
 {
-    /// <summary>
-    /// KarYönSistemi: Kargo Yönetim Sistemi uygaması için ana form (ekran).
-    /// </summary>
-    /// <seealso cref="System.Windows.Forms.Form" />
-    internal partial class AnaForm : Form
+    internal partial class MainForm : Form
     {
         private GonderiYonetimSistemi gonderiYonetimSistemi = GonderiYonetimSistemi.Temsilci;
 
@@ -17,7 +13,7 @@ namespace KarYonSistemi
         {
         }
 
-        public AnaForm()
+        public MainForm()
         {
             InitializeComponent();
             Icon = Icon.ExtractAssociatedIcon(System.Reflection.Assembly.GetExecutingAssembly().Location);
@@ -28,14 +24,14 @@ namespace KarYonSistemi
             GridleriYenile();
 
             // Gönderilmemiş ürünleri ComboBox'a yükler
-            MevcutUrunleriComboBoxaBagla();
+            GonderilmemisUrunleriComboBoxaBagla();
             KargoSaglayicilariniComboBoxaBagla();
         }
 
         private void GridleriYenile()
         {
             GonderileriGrideBagla();
-            MevcutUrunleriGrideBagla();
+            GonderilmemisUrunleriGrideBagla();
         }
 
         private void OrnekGonderileriKargoyaVer()
@@ -54,15 +50,16 @@ namespace KarYonSistemi
         }
 
         // Gönderilmemiş ürünleri getir
-        private List<Urun> MevcutUrunleriGetir()
+        private List<Urun> GonderilmemisUrunleriGetir()
         {
-            return gonderiYonetimSistemi.MevcutUrunleriGetir();
+            return gonderiYonetimSistemi.GonderilmemisUrunleriGetir();
         }
 
-        private void MevcutUrunleriGrideBagla()
+        private void GonderilmemisUrunleriGrideBagla()
         {
-            dataGridViewProducts.DataSource = null; // Önce temizle 
-            dataGridViewProducts.DataSource = MevcutUrunleriGetir();
+            //dataGridViewProducts.DataSource = null; // Önce temizle 
+            dataGridViewProducts.Visible = false;
+            dataGridViewProducts.DataSource = GonderilmemisUrunleriGetir();
             dataGridViewProducts.Columns["SeriNo"].DisplayIndex = 0;
             dataGridViewProducts.Columns["SeriNo"].HeaderText = "Ürün Seri Numarası";
             dataGridViewProducts.Columns["Adi"].DisplayIndex = 1;
@@ -72,12 +69,13 @@ namespace KarYonSistemi
             dataGridViewProducts.Columns["Fiyati"].DisplayIndex = 2;
             dataGridViewProducts.Columns["Silinmis"].Visible = false;
             dataGridViewProducts.RowTemplate.MinimumHeight = 40;
+            dataGridViewProducts.Visible = true;
         }
 
         private void GonderileriGrideBagla()
         {
             dataGridViewShippingHistory.DataSource = null;
-            dataGridViewShippingHistory.CellFormatting += DataGridViewShippingHistory_CellFormatting;
+            dataGridViewShippingHistory.CellFormatting += dataGridViewShippingHistory_CellFormatting;
             dataGridViewShippingHistory.DataSource = gonderiYonetimSistemi.gonderiler;
 
             // Gösterilmemesi gereken sütunları gizle
@@ -99,10 +97,10 @@ namespace KarYonSistemi
             dataGridViewShippingHistory.RowTemplate.MinimumHeight = 40;
         }
 
-        private void MevcutUrunleriComboBoxaBagla()
+        private void GonderilmemisUrunleriComboBoxaBagla()
         {
             comboBoxProductId.DataSource = null;
-            comboBoxProductId.DataSource = MevcutUrunleriGetir();
+            comboBoxProductId.DataSource = GonderilmemisUrunleriGetir();
             comboBoxProductId.DisplayMember = "Adi";
             comboBoxProductId.ValueMember = "SeriNo";
 
@@ -123,7 +121,7 @@ namespace KarYonSistemi
             comboBoxCargoId.Text = "Kargo seçiniz";
         }
 
-        private void DataGridViewShippingHistory_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        private void dataGridViewShippingHistory_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             // KargoNo sütununu ayarla
             if (dataGridViewShippingHistory.Columns[e.ColumnIndex].Name == "KargoNo" && e.Value is int)
@@ -172,8 +170,8 @@ namespace KarYonSistemi
                 gonderiYonetimSistemi.UrunEkle(urun);
 
                 // Grid'i ve ComboBox'u yenile
-                MevcutUrunleriGrideBagla();
-                MevcutUrunleriComboBoxaBagla();
+                GonderilmemisUrunleriGrideBagla();
+                GonderilmemisUrunleriComboBoxaBagla();
 
                 // Formu sıfırla
                 ResetProdcutForm();
@@ -253,7 +251,6 @@ namespace KarYonSistemi
 
                 // Gridleri yenile
                 GridleriYenile();
-                MevcutUrunleriComboBoxaBagla();
 
                 // Kargoya ver
                 KargoyaVer(gonderi);

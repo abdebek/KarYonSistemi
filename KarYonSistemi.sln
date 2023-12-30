@@ -5,6 +5,8 @@ VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KarYonSistemi", "KarYonSistemi\KarYonSistemi.csproj", "{ED57132B-3B17-4185-8A41-7DA824778C54}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KarYonConsole", "KarYonConsole\KarYonConsole.csproj", "{1F20E580-EACA-4610-9BE8-696137C8E801}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{ED57132B-3B17-4185-8A41-7DA824778C54}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED57132B-3B17-4185-8A41-7DA824778C54}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED57132B-3B17-4185-8A41-7DA824778C54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F20E580-EACA-4610-9BE8-696137C8E801}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F20E580-EACA-4610-9BE8-696137C8E801}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F20E580-EACA-4610-9BE8-696137C8E801}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F20E580-EACA-4610-9BE8-696137C8E801}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,17 +1,18 @@
 ﻿namespace KarYonSistemi
 {
     // Product class inheriting from Entity
-    public class Product : Entity
+    public class Urun : Varlik
     {
         // para miktarı için decimal tipi tercih edilir.
         // https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/floating-point-numeric-types#characteristics-of-the-floating-point-types
-        private decimal _price;
-        public string Name { get; set; }
-        public decimal Price
+        private decimal _fiyati;
+
+        public string Adi { get; set; }
+        public decimal Fiyati
         {
             get
             {
-                return _price;
+                return _fiyati;
             }
 
             set
@@ -22,14 +23,14 @@
                     throw new System.ArgumentOutOfRangeException("Price cannot be negative.");
                 }
 
-                _price = value;
+                _fiyati = value;
             }
         }
 
-        public Product(int id, string name, decimal price) : base(id)
+        public Urun(int id, string adi, decimal fiyati) : base(id)
         {
-            this.Name = name;
-            this.Price = price;
+            this.Adi = adi;
+            this.Fiyati = fiyati;
         }
     }
 }
