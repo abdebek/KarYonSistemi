@@ -126,9 +126,9 @@ namespace KarYonSistemi
         private void DataGridViewShippingHistory_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             // KargoNo sütununu ayarla
-            if (dataGridViewShippingHistory.Columns[e.ColumnIndex].Name == "KargoNo" && e.Value is int)
+            if (dataGridViewShippingHistory.Columns[e.ColumnIndex].Name == "KargoNo" && e.Value is short)
             {
-                int cargoId = (int)e.Value;
+                var cargoId = (short)e.Value;
                 e.Value = gonderiYonetimSistemi.GonderiHizmetSaglayicisiBul(cargoId)?.Adi ?? "Bilinmiyor";
                 e.FormattingApplied = true;
             }

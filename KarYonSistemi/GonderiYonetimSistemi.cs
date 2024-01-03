@@ -79,7 +79,7 @@ namespace KarYonSistemi
         /// </summary>
         /// <param name="seriNo">seri no</param>
         /// <returns></returns>
-        public GonderiHizmetSaglayicisi GonderiHizmetSaglayicisiBul(int seriNo)
+        public GonderiHizmetSaglayicisi GonderiHizmetSaglayicisiBul(short seriNo)
         {
             return gonderiHizmetSaglayicileri.FirstOrDefault(g => !g.Silinmis && g.SeriNo == seriNo);
         }

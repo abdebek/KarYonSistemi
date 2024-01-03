@@ -10,7 +10,7 @@ namespace KarYonSistemi
         Urun UrunBul(int seriNo);
         List<Urun> MevcutUrunleriGetir();
         Gonderi SeriNumarasiylaGonderiBul(int seriNo);
-        GonderiHizmetSaglayicisi GonderiHizmetSaglayicisiBul(int seriNo);
+        GonderiHizmetSaglayicisi GonderiHizmetSaglayicisiBul(short seriNo);
         Task KargoyaVer(Gonderi gonderi);
     }
 }
