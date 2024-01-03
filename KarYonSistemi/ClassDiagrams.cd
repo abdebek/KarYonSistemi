@@ -40,7 +40,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="KarYonSistemi.ArasKargo">
-    <Position X="12.5" Y="4.75" Width="1.75" />
+    <Position X="12.5" Y="4.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAIAiAAAAJAAAAAAAAQAAAAAAAgAAAAAAAAIAAAAAAA=</HashCode>
       <FileName>ArasKargo.cs</FileName>
@@ -89,7 +89,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="KarYonSistemi.GonderiYonetimSistemi">
-    <Position X="21.5" Y="3.75" Width="3" />
+    <Position X="21.5" Y="3.75" Width="3.25" />
     <TypeIdentifier>
       <HashCode>AAAAgCAQAIAAAAAAAgAIACAEAAEAQAAAAAAgAFAAACA=</HashCode>
       <FileName>GonderiYonetimSistemi.cs</FileName>
